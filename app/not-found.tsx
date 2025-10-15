@@ -1,0 +1,33 @@
+import { Btns404Page } from '@/components/general/Btns404Page';
+import { MainLayout } from '@/components/layout/MainLayout';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Page Not Found',
+  description:
+    "The page you're looking for doesn't exist. Return to Adepoju Olayode's portfolio to explore brand design services.",
+};
+
+export default function NoPage() {
+  return (
+    <MainLayout>
+      <div className="min-h-screen bg-background flex items-center justify-center px-4">
+        <div className="text-center space-y-8 max-w-md">
+          <div className="space-y-4">
+            <h1 className="text-6xl md:text-8xl font-bold text-accent">404</h1>
+            <h2 className="text-2xl md:text-3xl font-bold font-heading text-primary">
+              Page Not Found
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {`The page you're looking for doesn't exist or has been moved.`}
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Btns404Page />
+          </div>
+        </div>
+      </div>
+    </MainLayout>
+  );
+}

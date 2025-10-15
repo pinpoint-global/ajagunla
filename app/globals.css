@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+@config '../tailwind.config.ts';
+@import "tw-animate-css";
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+/* @import 'swiper/css/mousewheel'; */
+
+@custom-variant dark (&:is(.dark *));
+
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-LightBETA.woff2') format('woff2'),
+      url('/fonts/inter/Inter-LightBETA.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-LightItalicBETA.woff2') format('woff2'),
+      url('/fonts/inter/Inter-LightItalicBETA.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-Regular.woff2') format('woff2'),
+      url('/fonts/inter/Inter-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Italic.woff2') format('woff2'),
+      url('/fonts/inter/Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-Medium.woff2') format('woff2'),
+      url('/fonts/inter/Inter-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-MediumItalic.woff2') format('woff2'),
+      url('/fonts/inter/Inter-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-Semibold.woff2') format('woff2'),
+      url('/fonts/inter/Inter-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-SemiBoldItalic.woff2') format('woff2'),
+      url('/fonts/inter/Inter-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-Bold.woff2') format('woff2'),
+      url('/fonts/inter/Inter-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-BoldItalic.woff2') format('woff2'),
+      url('/fonts/inter/Inter-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Playfair Display */
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-Regular.woff2') format('woff2'),
+      url('/fonts/playfair-display/PlayfairDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-Italic.woff2') format('woff2'),
+      url('/fonts/playfair-display/PlayfairDisplay-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-Medium.woff2') format('woff2'),
+      url('/fonts/playfair-display/PlayfairDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-MediumItalic.woff2') format('woff2'),
+      url('/fonts/playfair-display/PlayfairDisplay-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-SemiBold.woff2') format('woff2'),
+      url('/fonts/playfair-display/PlayfairDisplay-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-SemiBoldItalic.woff2') format('woff2'),
+      url('/fonts/playfair-display/PlayfairDisplay-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-Bold.woff2') format('woff2'),
+      url('/fonts/playfair-display/PlayfairDisplay-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-BoldItalic.woff2') format('woff2'),
+      url('/fonts/playfair-display/PlayfairDisplay-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Main Colors - Brand Identity */
+  --background: 0 0% 98%;
+  --foreground: 240 10% 10%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 10%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 10%;
+
+  /* Primary - Deep Red (Brand Color) */
+  --primary: 359 93% 21%;
+  --primary-foreground: 0 0% 100%;
+  --primary-light: 359 93% 31%;
+  
+  /* Secondary - Nigerian Green */
+  /* #147335 */
+  --secondary: 141 70% 26%;
+  --secondary-foreground: 0 0% 100%;
+
+  /* Accent - Gold */
+  /* #D9981E */
+  --accent: 39 76% 48%;
+  --accent-foreground: 240 10% 10%;
+  
+  /* Red Accent - Nigerian Flag */
+  --red: 359 93% 21%;
+  --red-foreground: 0 0% 100%;
+  
+  /* Muted - Elegant Neutrals */
+  --muted: 210 20% 94%;
+  --muted-foreground: 215 15% 40%;
+
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 215 20% 88%;
+  --input: 215 20% 88%;
+  --ring: 359 93% 21%;
+
+  --radius: 0.75rem;
+
+  
+  /* Shadows */
+  --shadow-elegant: 0 4px 20px -2px hsl(359 93% 21% / 0.1);
+  --shadow-gold: 0 8px 30px -4px hsl(39 71% 50% / 0.2);
+
+  /* Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.dark {
+  --background: 240 10% 8%;
+  --foreground: 0 0% 98%;
+
+  --card: 240 8% 12%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 8% 12%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 359 93% 31%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 141 67% 32%;
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 39 71% 55%;
+  --accent-foreground: 240 10% 10%;
+  
+  --red: 359 93% 31%;
+  --red-foreground: 0 0% 100%;
+
+  --muted: 240 8% 18%;
+  --muted-foreground: 215 15% 65%;
+
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 240 8% 20%;
+  --input: 240 8% 20%;
+  --ring: 359 93% 31%;
+
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@theme {
+  --breakpoint-360: 360px;
+  --breakpoint-xs: 425px;
+  --breakpoint-sm: 500px;
+  --breakpoint-600: 600px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-1400: 1400px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1700px;
+
+  --color-dark: #020202;
+  --color-gray-59: #595959;
+  --color-gray-66: #666666;
+  --color-gray-f2: #F2F2F2;
+  --color-gray-b3: #B3B3B3;
+  --color-gray-d9: #D9D9D9;
+  --color-gray-40: #404040;
+
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+
+  --animate-marquee: marquee 100s infinite;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply text-[16px] md:text-[14px] lg:text-[14px] 2xl:text-[12px] scroll-smooth;
+  }
+  body {
+    @apply min-h-screen w-full bg-background text-foreground font-sans text-[0.875rem] leading-[1.5] tracking-[0.05em] break-words text-wrap text-start;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  .regular-container {
+    @apply w-full max-w-7xl 2xl:max-w-[1300px] 3xl:max-w-[1500px] mx-auto px-4 sm:px-8 md:px-12 lg:px-8 xl:px-10 2xl:px-16 3xl:px-20;
+  }
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-[6.5rem];
+  }
+
+  .btn-hero {
+    @apply bg-primary hover:bg-primary-light text-primary-foreground transition-all duration-300 shadow-elegant hover:shadow-gold hover:-translate-y-0.5;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-300 shadow-gold;
+  }
+
+  .card-elegant {
+    @apply bg-card rounded-lg shadow-elegant hover:shadow-gold transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .pattern-overlay {
+    background-image: 
+      repeating-linear-gradient(45deg, transparent, transparent 10px, hsl(359 93% 21% / 0.02) 10px, hsl(359 93% 21% / 0.02) 20px);
+  }  
+  
+  /* UTILITIES */
+  .center-circle {
+    @apply rounded-full aspect-square grid place-items-center;
+  }
+
+  /* Give any select/dropdown trigger caret the .trigger-caret class to make it rotate when the dropdown is open */
+  .shadcn-trigger > .trigger-caret {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .shadcn-trigger[data-state='open'] > .trigger-caret {
+    @apply rotate-180;
+  }
+
+  /* Hide scrollbar for any element */
+  .scrollbar-none {
+    overflow: auto;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in WebKit browsers */
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none; /* Hides scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+  }
+
+  /* Remove arrows from number inputs */
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+
+  /* Hide date input default calendar icon */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+  input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
+    appearance: none;
+    -moz-appearance: textfield;
+  }
+  input[type="date"] {
+    appearance: none;
+    -moz-appearance: textfield;
+  }
+  input[type="date"]::-ms-clear,
+  input[type="date"]::-ms-reveal {
+    display: none;
+  }
+
+  video {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+  }
+
+  /* Accordion animations */
+  .data-\[state\=closed\]\:animate-accordion-up {
+    &[data-state="closed"] {
+      animation-duration: 0.7s !important;
+      animation-timing-function: ease-in-out !important;
+    }
+  }
+  .data-\[state\=open\]\:animate-accordion-down {
+    &[data-state="open"] {
+      animation-duration: 0.7s !important;
+      animation-timing-function: ease-in-out !important;
+    }
+  }
+
+  /* Animations */
+  .animate-loader {
+    animation: loader 2s ease-in-out infinite;
+  }
+  .animate-zoom {
+    animation: zoom 1s ease-in-out 1;
+  }
+
+  @keyframes loader {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes zoom {
+    0% {
+      transform: scale(0.6);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes zoom-out {
+    from {
+      transform: scale(110%);
+    }
+    to {
+      transform: scale(100%);
+    }
+  }
+}
