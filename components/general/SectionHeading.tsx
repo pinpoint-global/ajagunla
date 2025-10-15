@@ -13,7 +13,7 @@ export const SectionHeading = ({ title, text, className }: SectionHeadingProps) 
         {title}
       </h2>
       <p
-        className={`text-xl text-muted-foreground max-w-3xl ${className?.includes('text-start') ? '' : 'mx-auto'}`}>
+        className={`text-sm md:text-xl text-muted-foreground max-w-3xl ${className?.includes('text-start') ? '' : 'px-2 mx-auto'}`}>
         {text}
       </p>
     </div>

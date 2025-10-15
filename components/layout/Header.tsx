@@ -37,15 +37,15 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           {/* Logo */}
           <div className="flex items-center">
             <GhostBtn linkProps={{ href: '/' }}>
-              <div className="flex items-center justify-between gap-4">
-                <i className="text-[2.5rem]">
+              <div className="flex items-center justify-between gap-2">
+                <i className="text-[1.5rem] lg:text-[2.5rem]">
                   <LogoFull />
                 </i>
-                <div className="hidden xl:grid text-start">
-                  <span className="text-base md:text-lg font-semibold text-foreground">
+                <div className="grid gap-1 lg:gap-2 text-start">
+                  <span className="text-[0.8125rem] md:text-[1.125rem] leading-none font-semibold text-foreground">
                     Sen. Olubiyi Fadeyi-Ajagunla
                   </span>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-[0.625rem] lg:text-[0.75rem] leading-none text-muted-foreground">
                     Osun Central Senatorial District
                   </span>
                 </div>
@@ -54,7 +54,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <nav className="">
               <ul className="list-none hidden lg:flex items-center space-x-8">
                 {NAV_LINKS.filter(s => !s.showInFooterOnly).map((item, idx) => (
@@ -73,8 +73,8 @@ export const Header = ({ className, ...props }: HeaderProps) => {
 
           {/* Mobile Menu Button */}
           <GhostBtn
-            className="md:hidden"
-            wrapClassName="md:hidden"
+            className="lg:hidden"
+            wrapClassName="lg:hidden"
             LucideIcon={isMenuOpen ? X : Menu}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           />

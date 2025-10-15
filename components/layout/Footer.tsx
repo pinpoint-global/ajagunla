@@ -19,7 +19,7 @@ export const Footer = () => {
             <div className="flex items-center">
               <GhostBtn
                 Icon={LogoFull}
-                iconClass="text-secondary-foreground/80 text-2xl"
+                iconClass="text-secondary-foreground/80 text-3xl"
                 linkProps={{ href: '/' }}
               />
             </div>
