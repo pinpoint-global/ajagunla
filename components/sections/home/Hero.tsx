@@ -15,19 +15,19 @@ export const HomeHero = () => {
           alt="Senator Olubiyi Fadeyi-Ajagunla - Distinguished Senator representing Osun Central Senatorial District"
           className="w-full h-full object-cover object-[top_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/70 to-primary/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/75 via-primary/60 to-primary/75" />
       </div>
 
       {/* Content */}
       <div className="regular-container relative z-10 text-center px-6 py-16 animate-fade-in-up">
         <div className="max-w-4xl 2xl:max-w-5xl mx-auto">
-          <h1 className="text-primary-foreground text-4xl md:text-5xl lg:text-6xl leading-tight font-semibold font-serif mb-6">
+          <h1 className="text-primary-foreground text-4xl md:text-5xl lg:text-5xl leading-tight font-semibold font-serif mb-6">
             Senator Olubiyi Fadeyi-Ajagunla
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 font-medium">
+          <p className="text-base md:text-2xl text-primary-foreground/90 mb-4 font-medium">
             Serving Osun Central Senatorial District
           </p>
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-sm md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
             Empowering Communities Through Leadership, Education & Development
           </p>
 
