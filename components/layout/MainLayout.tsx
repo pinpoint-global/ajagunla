@@ -14,7 +14,6 @@ export const MainLayout = ({ children, className }: MainLayoutProps) => {
     <>
       <Header />
       <main className={cn('min-h-screen', className)}>
-        {/* <LoadAnimationScreen name={pageName} /> */}
         {children}
         <ScrollToTop />
       </main>

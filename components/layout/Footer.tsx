@@ -46,8 +46,8 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-accent">Contact Us</h3>
-            <div className="space-y-3 text-secondary-foreground/60">
+            <h3 className="text-lg font-semibold text-accent">Contact</h3>
+            <div className="space-y-5 text-secondary-foreground/60">
               {CONTACT_CARDS_FOR_FOOTER.map((item, idx) => (
                 <FooterContactRow key={idx} {...item} />
               ))}

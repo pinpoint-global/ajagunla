@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionHeading } from '@/components/general/SectionHeading';
 import { BUSINESSES } from '@/lib/constants/texts';
 import { LucideIconComp } from '@/lib/types/general';
