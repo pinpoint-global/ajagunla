@@ -1,3 +1,5 @@
+'use client';
+
 export const AboutHero = () => {
   return (
     <section className="section-padding bg-primary text-primary-foreground">

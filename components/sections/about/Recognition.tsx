@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionHeading } from '@/components/general/SectionHeading';
 import { AWARDS } from '@/lib/constants/texts';
 import { Award } from 'lucide-react';

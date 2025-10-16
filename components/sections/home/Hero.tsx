@@ -1,10 +1,15 @@
 'use client';
+
 import { RegularBtn } from '@/components/atoms/RegularBtn';
 import { HERO_STATS } from '@/lib/constants/texts';
+import { useSiteStore } from '@/lib/store/siteStore';
 import { scrollToSection } from '@/lib/utils/general';
 import { ArrowRight, FileText, Users } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const HomeHero = () => {
+  const { siteLoading } = useSiteStore(state => state);
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Light Overlay */}
@@ -19,7 +24,11 @@ export const HomeHero = () => {
       </div>
 
       {/* Content */}
-      <div className="regular-container relative z-10 text-center px-6 py-16 animate-fade-in-up">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={siteLoading ? {} : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="regular-container relative z-10 text-center px-6 py-16 animate-fade-in-up">
         <div className="max-w-4xl 2xl:max-w-5xl mx-auto">
           <h1 className="text-primary-foreground text-5xl md:text-5xl lg:text-5xl 2xl:text-6xl leading-tight font-semibold font-serif mb-6">
             Senator Olubiyi Fadeyi-Ajagunla
@@ -75,7 +84,7 @@ export const HomeHero = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionHeading } from '@/components/general/SectionHeading';
 import { BIOGRAPHY_TEXTS } from '@/lib/constants/texts';
 

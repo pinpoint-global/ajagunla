@@ -1,5 +1,9 @@
+'use client';
+
+import { useSiteStore } from '@/lib/store/siteStore';
 import { LucideIconComp } from '@/lib/types/general';
 import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
 
 export interface SectionHeadingProps {
   Icon?: LucideIconComp;
@@ -9,8 +13,15 @@ export interface SectionHeadingProps {
 }
 
 export const SectionHeading = ({ Icon, title, text, className }: SectionHeadingProps) => {
+  const { siteLoading } = useSiteStore(state => state);
+
   return (
-    <div className={cn('text-center grid gap-4 mb-16', className)}>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={siteLoading ? {} : { opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 1 }}
+      className={cn('text-center grid gap-4 mb-16', className)}>
       {Icon && (
         <Icon
           className={`size-12 text-primary ${className?.includes('text-start') ? '' : 'mx-auto'}`}
@@ -23,6 +34,6 @@ export const SectionHeading = ({ Icon, title, text, className }: SectionHeadingP
         className={`text-sm md:text-xl text-muted-foreground max-w-3xl ${className?.includes('text-start') ? '' : 'px-2 mx-auto'}`}>
         {text}
       </p>
-    </div>
+    </motion.div>
   );
 };

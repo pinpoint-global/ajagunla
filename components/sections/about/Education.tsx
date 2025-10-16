@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionHeading } from '@/components/general/SectionHeading';
 import { EDUCATION } from '@/lib/constants/texts';
 import { GraduationCap } from 'lucide-react';
