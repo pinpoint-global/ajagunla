@@ -11,7 +11,7 @@ export const HomeHero = () => {
       <div className="absolute inset-0 z-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/senator-fadeyi.webp"
+          src="/images/senator-fadeyi-2.webp"
           alt="Senator Olubiyi Fadeyi-Ajagunla - Distinguished Senator representing Osun Central Senatorial District"
           className="w-full h-full object-cover object-[top_center]"
         />
@@ -21,7 +21,7 @@ export const HomeHero = () => {
       {/* Content */}
       <div className="regular-container relative z-10 text-center px-6 py-16 animate-fade-in-up">
         <div className="max-w-4xl 2xl:max-w-5xl mx-auto">
-          <h1 className="text-primary-foreground text-4xl md:text-5xl lg:text-5xl leading-tight font-semibold font-serif mb-6">
+          <h1 className="text-primary-foreground text-5xl md:text-5xl lg:text-5xl 2xl:text-6xl leading-tight font-semibold font-serif mb-6">
             Senator Olubiyi Fadeyi-Ajagunla
           </h1>
           <p className="text-base md:text-2xl text-primary-foreground/90 mb-4 font-medium">

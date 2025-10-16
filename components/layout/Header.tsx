@@ -45,7 +45,7 @@ export const Header = ({ className, ...props }: HeaderProps) => {
                   <span className="text-[0.8125rem] md:text-[1.125rem] leading-none font-semibold text-foreground">
                     Sen. Olubiyi Fadeyi-Ajagunla
                   </span>
-                  <span className="text-[0.625rem] lg:text-[0.75rem] leading-none text-muted-foreground">
+                  <span className="text-[0.6875rem] lg:text-[0.75rem] leading-none text-muted-foreground">
                     Osun Central Senatorial District
                   </span>
                 </div>
@@ -75,16 +75,18 @@ export const Header = ({ className, ...props }: HeaderProps) => {
           <GhostBtn
             className="lg:hidden"
             wrapClassName="lg:hidden"
+            iconClass={`size-6 ${isMenuOpen ? 'text-destructive' : ''}`}
             LucideIcon={isMenuOpen ? X : Menu}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
-            <nav className="">
-              <ul className="list-none grid px-6 pb-6 space-y-4">
+        <div
+          className={`lg:hidden h-auto grid ${isMenuOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'} transition-all duration-500 ease-out animate-fade-in overflow-hidden`}>
+          <nav className="overflow-hidden">
+            <div className="pb-4">
+              <ul className="list-none grid px-0 pb-6 space-y-2">
                 {NAV_LINKS.filter(s => !s.showInFooterOnly).map((item, idx) => (
                   <MobileHeaderLink
                     key={idx}
@@ -102,9 +104,9 @@ export const Header = ({ className, ...props }: HeaderProps) => {
                   className="gradient-accent w-full"
                 /> */}
               </div>
-            </nav>
-          </div>
-        )}
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
   );
@@ -205,8 +207,8 @@ const HeaderLink = ({
           }}>
           <div className="w-full lg:w-fit px-0 relative">
             <p
-              className={`font-medium transition-smooth hover:text-primary ${
-                activePath === href ? 'text-primary' : 'text-foreground'
+              className={`transition-smooth hover:text-primary ${
+                activePath === href ? 'font-semibold text-primary' : 'font-medium text-foreground'
               }`}>
               {text}
             </p>
@@ -231,7 +233,7 @@ const MobileHeaderLink = ({ text, href, children, afterClick, activePath }: Head
               size="icon"
               linkProps={{ href }}
               text={text}
-              className={`w-full justify-start px-4 py-2 ${activePath === href ? 'text-primary' : 'text-muted-foreground'} hover:text-primary`}
+              className={`w-full justify-start px-4 py-2 ${activePath === href ? 'bg-primary text-primary-foreground' : 'text-muted-foreground'} hover:bg-muted`}
               wrapClassName="w-full"
               onClick={() => afterClick?.()}
             />
@@ -243,7 +245,7 @@ const MobileHeaderLink = ({ text, href, children, afterClick, activePath }: Head
           size="icon"
           linkProps={{ href }}
           text={text}
-          className={`w-full justify-start px-4 py-2 ${activePath === href ? 'text-primary' : 'text-foreground'} hover:text-primary`}
+          className={`w-full justify-start px-4 py-2 ${activePath === href ? 'bg-primary text-primary-foreground' : 'text-foreground'} hover:bg-muted`}
           wrapClassName="w-full"
           onClick={() => afterClick?.()}
         />

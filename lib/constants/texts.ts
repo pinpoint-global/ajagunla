@@ -1,6 +1,9 @@
 import { Facebook, Instagram, Linkedin, TwitterX } from '@/components/icons';
 import { FooterContactRowProps } from '@/components/layout/Footer';
 import { HeaderLinkProps } from '@/components/layout/Header';
+import { BusinessProps } from '@/components/sections/about/Business';
+import { EducationProps } from '@/components/sections/about/Education';
+import { AwardProps } from '@/components/sections/about/Recognition';
 import { AboutSummary } from '@/components/sections/home/About';
 import { CommunityEngagementProps } from '@/components/sections/home/Community';
 import { HeroQuickStats } from '@/components/sections/home/Hero';
@@ -71,20 +74,19 @@ export const SEO_DETAILS = {
 
 export const NAV_LINKS: HeaderLinkProps[] = [
   { text: 'Home', href: '/' },
-  { text: 'About', href: '#', footerOnlySuffix: ' Sen. Olubiyi Fadeyi' },
+  { text: 'About', href: '/about', footerOnlySuffix: ' Sen. Olubiyi Fadeyi' },
   { text: 'Legislative Work', href: '#' },
   { text: 'Community', href: '#' },
   { text: 'Contact', href: '#' },
 ];
 
 export const CONTACT_INFORMATION = {
-  address: ['No 10 Stephen Akinbolagbe Street,', 'Off Omi Asoro, Ilesa. Osun State.'],
-  tel: ['+234 901 147 9072', '+234 706 498 6996'],
-  whatsapp: '+234 706 498 6996',
+  address: ['National Assembly Complex,', 'Three Arms Zone, Abuja'],
+  tel: ['+234 701 234 5678', '+234 812 345 6789'],
+  whatsapp: '+234 701 234 5678',
   email: ['info@ajagunla1.com'],
-  locationUrl: 'https://maps.app.goo.gl/s3zc3XerGysdCCvp8',
-  mapEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.5703515735695!2d4.781864784491368!3d7.6216388727818725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1038196968766f3f%3A0xd48f876bbd0bdc6b!2sHardunni%20Limited!5e0!3m2!1sen!2sng!4v1759507060782!5m2!1sen!2sng',
+  locationUrl: 'https://maps.app.goo.gl/bBVU6r6zVEhxURAW9',
+  mapEmbedUrl: '',
 };
 
 // export const CONTACT_CARDS: ContactCardProps[] = [
@@ -134,12 +136,8 @@ export const CONTACT_INFORMATION = {
 export const CONTACT_CARDS_FOR_FOOTER: FooterContactRowProps[] = [
   {
     LucideIcon: MapPin,
-    href: 'https://maps.app.goo.gl/bBVU6r6zVEhxURAW9',
-    texts: [
-      { text: 'National Assembly Complex,' },
-      { text: 'Three Arms Zone,' },
-      { text: 'Abuja' },
-    ],
+    href: CONTACT_INFORMATION.locationUrl,
+    texts: CONTACT_INFORMATION.address.map(text => ({ text })),
   },
   {
     LucideIcon: Phone,
@@ -178,11 +176,6 @@ export const SOCIALS = [
     href: 'https://wwww.x.com',
     Icon: TwitterX,
   },
-  // {
-  //   label: 'Tiktok',
-  //   href: 'https://www.tiktok.com/@pinpointglobal?_t=ZS-8yRAXCYmRLp&_r=1',
-  //   Icon: Tiktok,
-  // },
 ];
 
 export const HERO_STATS: HeroQuickStats[] = [
@@ -262,6 +255,74 @@ export const LEGISLATIVE_HIGHLIGHTS: LegislativeHighlightProps[] = [
     Icon: TrendingUp,
     title: 'Trade & Investment',
     description: 'Vice Chairman driving economic growth and investment opportunities',
+  },
+];
+
+export const BIOGRAPHY_TEXTS = [
+  "Olubiyi Fadeyi-Ajagunla is a Nigerian politician, businessman, and philanthropist currently\
+  serving as a Senator representing the Osun Central Senatorial District. Elected in 2023 under\
+  the People's Democratic Party (PDP), he has demonstrated unwavering commitment to public service\
+  and community development.",
+  'In the February 25, 2023 Senate election, Fadeyi-Ajagunla won the Osun Central Senatorial\
+  District seat by polling 134,229 votes, defeating the incumbent Senator and spokesperson of\
+  the 9th Senate, Ajibola Basiru of the APC who scored 117,609 votes. This victory marked a\
+  significant shift in the political landscape of Osun Central.',
+  'In the 10th National Assembly, Senator Fadeyi-Ajagunla serves as the Vice Chairman of both\
+  the Senate Communications and the Trade & Investment committees, where he has been instrumental\
+  in shaping policies that benefit not just his constituency, but Nigeria as a whole.',
+];
+
+export const EDUCATION: EducationProps[] = [
+  {
+    degree: 'Bachelor of Arts',
+    course: 'Archaeology',
+    institution: 'Obafemi Awolowo University, Ile-Ife, Nigeria',
+  },
+  {
+    degree: 'Master of Laws (LLM)',
+    course: 'Business International Law',
+    institution: 'University of Cumbria, United Kingdom',
+  },
+  {
+    degree: 'Executive Education',
+    course: 'Senior Executive Courses',
+    institution: 'Harvard Kennedy School & London School of Economics',
+  },
+];
+
+export const BUSINESSES: BusinessProps[] = [
+  {
+    Icon: Briefcase,
+    title: 'Business Leadership',
+    paragraphs: [
+      'Before entering politics, Senator Fadeyi-Ajagunla built an impressive career in\
+      business, serving as the Executive Vice Chairman of Fane Group, a diversified\
+      conglomerate with interests spanning consultancy, real estate, energy, and\
+      hospitality sectors.',
+      'He has also served as Chairman of Harvard Continental Hotels, demonstrating his\
+      versatility and leadership in the private sector.',
+    ],
+  },
+  {
+    Icon: Heart,
+    title: 'Ajagunla Foundation',
+    paragraphs: [
+      'Senator Fadeyi-Ajagunla is the founder of the Ajagunla Foundation, a non-profit\
+      organization dedicated to community development, education, and empowerment\
+      initiatives across Osun State and beyond.',
+      'Through the foundation, he has impacted thousands of lives through scholarship\
+      programs, skills acquisition training, healthcare interventions, and infrastructure\
+      development projects.',
+    ],
+  },
+];
+
+export const AWARDS: AwardProps[] = [
+  {
+    year: '2024',
+    name: 'Vanguard Philanthropist of the Year',
+    desc: 'Awarded by Vanguard Newspaper in recognition of outstanding contributions to community\
+      development and humanitarian services across Nigeria.',
   },
 ];
 

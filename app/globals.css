@@ -345,7 +345,7 @@
     @apply text-[14px] md:text-[14px] lg:text-[14px] 2xl:text-[12px] scroll-smooth;
   }
   body {
-    @apply min-h-screen w-full bg-background text-foreground font-sans text-[0.875rem] leading-[1.5] tracking-[0.05em] break-words text-wrap text-start;
+    @apply min-h-screen w-full bg-background text-foreground font-sans text-[1rem] leading-[1.5] tracking-[0.05em] break-words text-wrap text-start;
   }
   .container-custom {
     @apply max-w-7xl mx-auto;

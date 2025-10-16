@@ -13,7 +13,7 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground section-padding">
       <div className="regular-container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
