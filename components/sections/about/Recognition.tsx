@@ -2,19 +2,28 @@
 
 import { SectionHeading } from '@/components/general/SectionHeading';
 import { AWARDS } from '@/lib/constants/texts';
+import { useSiteStore } from '@/lib/store/siteStore';
 import { Award } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const Recognition = () => {
+  const { siteLoading } = useSiteStore(state => state);
+
   return (
     <section className="section-padding bg-muted/30">
       <div className="regular-container">
         <SectionHeading Icon={Award} title="Recognition & Awards" className="mb-10" />
 
-        <div className="flex justify-center gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={siteLoading ? {} : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex justify-center gap-6">
           {AWARDS.map((award, idx) => (
             <AwardCard key={idx} {...award} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

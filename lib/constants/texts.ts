@@ -4,6 +4,7 @@ import { HeaderLinkProps } from '@/components/layout/Header';
 import { BusinessProps } from '@/components/sections/about/Business';
 import { EducationProps } from '@/components/sections/about/Education';
 import { AwardProps } from '@/components/sections/about/Recognition';
+import { ContactCardProps } from '@/components/sections/contact/Content';
 import { AboutSummary } from '@/components/sections/home/About';
 import { CommunityEngagementProps } from '@/components/sections/home/Community';
 import { HeroQuickStats } from '@/components/sections/home/Hero';
@@ -77,61 +78,60 @@ export const NAV_LINKS: HeaderLinkProps[] = [
   { text: 'About', href: '/about', footerOnlySuffix: ' Sen. Olubiyi Fadeyi' },
   { text: 'Legislative Work', href: '#' },
   { text: 'Community', href: '#' },
-  { text: 'Contact', href: '#' },
+  { text: 'Contact', href: '/contact' },
 ];
 
 export const CONTACT_INFORMATION = {
   address: ['National Assembly Complex,', 'Three Arms Zone, Abuja'],
+  constituencyOffice: ['Osun Central Senatorial District', 'Oshogbo, Osun State'],
   tel: ['+234 701 234 5678', '+234 812 345 6789'],
   whatsapp: '+234 701 234 5678',
   email: ['info@ajagunla1.com'],
   locationUrl: 'https://maps.app.goo.gl/bBVU6r6zVEhxURAW9',
   mapEmbedUrl: '',
+  officeHours: [
+    {
+      days: 'Monday - Friday',
+      time: '9:00 AM - 5:00 PM',
+    },
+    {
+      days: 'Saturday - Sunday',
+      time: 'Closed',
+    },
+  ],
 };
 
-// export const CONTACT_CARDS: ContactCardProps[] = [
-//   {
-//     LucideIcon: MapPin,
-//     title: 'Our Locations',
-//     texts: CONTACT_INFORMATION.address.map(text => ({
-//       text,
-//       link: CONTACT_INFORMATION.locationUrl,
-//     })),
-//     pretext: 'Hardunni Limited',
-//   },
-//   {
-//     LucideIcon: Phone,
-//     title: 'Phone',
-//     texts: CONTACT_INFORMATION.tel.map(phone => ({
-//       text: phone,
-//       link: `tel:${phone.replaceAll(' ', '')}`,
-//     })),
-//   },
-//   {
-//     LucideIcon: Mail,
-//     title: 'Email',
-//     texts: CONTACT_INFORMATION.email.map(text => ({ text, link: `mailto:${text}` })),
-//   },
-//   // {
-//   //   Icon: Whatsapp,
-//   //   title: 'Whatsapp',
-//   //   texts: [
-//   //     {
-//   //       text: CONTACT_INFORMATION.whatsapp,
-//   //       link: `https://wa.me/${CONTACT_INFORMATION.whatsapp.slice(1).replaceAll(' ', '')}`,
-//   //     },
-//   //   ],
-//   // },
-//   {
-//     LucideIcon: Clock,
-//     title: 'Business Hours',
-//     texts: [
-//       { text: 'Monday - Friday: 7:00 AM - 6:00 PM' },
-//       { text: 'Saturday: 8:00 AM - 4:00 PM' },
-//       { text: 'Sunday: Closed' },
-//     ],
-//   },
-// ];
+export const CONTACT_CARDS: ContactCardProps[] = [
+  {
+    LucideIcon: MapPin,
+    title: 'Senate Office',
+    href: CONTACT_INFORMATION.locationUrl,
+    texts: CONTACT_INFORMATION.address.map(text => ({
+      text,
+    })),
+  },
+  {
+    LucideIcon: MapPin,
+    title: 'Constituency Office',
+    // href: CONTACT_INFORMATION.locationUrl,
+    texts: CONTACT_INFORMATION.constituencyOffice.map(text => ({
+      text,
+    })),
+  },
+  {
+    LucideIcon: Phone,
+    title: 'Phone',
+    texts: CONTACT_INFORMATION.tel.map(phone => ({
+      text: phone,
+      link: `tel:${phone.replaceAll(' ', '')}`,
+    })),
+  },
+  {
+    LucideIcon: Mail,
+    title: 'Email',
+    texts: CONTACT_INFORMATION.email.map(text => ({ text, link: `mailto:${text}` })),
+  },
+];
 
 export const CONTACT_CARDS_FOR_FOOTER: FooterContactRowProps[] = [
   {
