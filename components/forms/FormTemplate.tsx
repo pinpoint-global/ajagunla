@@ -209,12 +209,14 @@ export const RequestForm = memo(
     }, []);
 
     return (
-      <Card className="shadow-pin-button border-pin-gray-light">
-        <CardHeader className="bg-gradient-hero text-white rounded-t-lg">
-          <CardTitle className="text-2xl text-center">{formTitle}</CardTitle>
+      <Card className="border-none shadow-elegant hover:shadow-gold transition-all duration-300 hover:-translate-y-1 py-8 px-4 md:px-8">
+        <CardHeader className="p-0">
+          <CardTitle className="text-3xl md:text-4xl lg:text-5xl text-primary mb-6">
+            {formTitle}
+          </CardTitle>
         </CardHeader>
 
-        <CardContent className="px-4 500:px-6 md:px-8 py-8">
+        <CardContent className="py-8 px-0">
           <form id={formId} onSubmit={handleSubmit} className="grid gap-6">
             <div className="inputs-wrap grid gap-6">
               {inputsArr.map((item, idx) => (
@@ -263,10 +265,10 @@ export const RequestForm = memo(
             <div className="w-full flex items-center">
               <RegularBtn
                 type="submit"
-                // variant="cta"
-                // typo="hero"
-                size="full"
-                className=""
+                variant="hero"
+                size="lg"
+                className="w-full md:w-fit"
+                wrapClassName="w-full md:w-fit"
                 text={btnText || 'Submit'}
                 loading={loading}
                 disabled={!formValid}

@@ -2,10 +2,15 @@
 
 import { GhostBtn } from '../atoms/GhostBtn';
 import { LogoFull } from '../icons';
-import { CONTACT_CARDS_FOR_FOOTER, NAV_LINKS, SOCIALS } from '@/lib/constants/texts';
+import {
+  CONTACT_CARDS_FOR_FOOTER,
+  CONTACT_INFORMATION,
+  NAV_LINKS,
+  SOCIALS,
+} from '@/lib/constants/texts';
 import { HeaderLinkProps } from './Header';
 import { IconComp, LucideIconComp } from '@/lib/types/general';
-import { cn } from '@/lib/utils';
+import { ContactCardText, ContactCardTextProps, OfficeHours } from '../sections/contact/Content';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -58,14 +63,9 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-accent">Office Hours</h3>
             <ul className="space-y-2 text-sm text-secondary-foreground/80">
-              <li className="flex justify-between">
-                <span>Monday - Friday:</span>
-                <span className="font-medium">9:00 AM - 5:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Saturday - Sunday:</span>
-                <span className="font-medium">Closed</span>
-              </li>
+              {CONTACT_INFORMATION.officeHours.map((item, idx) => (
+                <OfficeHourRow key={idx} {...item} />
+              ))}
             </ul>
           </div>
         </div>
@@ -159,30 +159,6 @@ const FooterContactRow = ({ LucideIcon, Icon, texts, href = '' }: FooterContactR
   );
 };
 
-export interface ContactCardTextProps {
-  text: string;
-  link?: string;
-  className?: string;
-}
-
-export function ContactCardText({ text, link, className }: ContactCardTextProps) {
-  return (
-    <>
-      {link ? (
-        <a
-          href={link}
-          target="_blank"
-          rel="noreferrer noopener"
-          className={cn('no-underline text-current cursor-pointer', className)}>
-          <span>{text}</span>
-        </a>
-      ) : (
-        <span>{text}</span>
-      )}
-    </>
-  );
-}
-
 export interface SocialBtnProps {
   Icon: IconComp;
   href: string;
@@ -193,7 +169,7 @@ export function SocialBtn({ Icon, href, label }: SocialBtnProps) {
   return (
     <GhostBtn
       className="size-10 bg-secondary-foreground/10 grid place-items-center rounded-full hover:bg-accent hover:text-accent-foreground transition-all transition-smooth"
-      linkProps={{ href, target: '_blank' }}
+      linkProps={{ href, target: '_blank', rel: 'noopener noreferrer' }}
       aria-label={label}>
       <i className="text-xl">
         <Icon />
@@ -201,3 +177,12 @@ export function SocialBtn({ Icon, href, label }: SocialBtnProps) {
     </GhostBtn>
   );
 }
+
+const OfficeHourRow = ({ days, time }: OfficeHours) => {
+  return (
+    <li className="flex justify-between">
+      <span>{days}:</span>
+      <span className="font-medium">{time}</span>
+    </li>
+  );
+};
