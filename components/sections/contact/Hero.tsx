@@ -7,7 +7,7 @@ export const ContactHero = () => {
 
   return (
     <section className="section-padding bg-primary text-primary-foreground">
-      <div className="container-custom">
+      <div className="regular-container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={siteLoading ? {} : { opacity: 1, y: 0 }}

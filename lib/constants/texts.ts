@@ -83,7 +83,7 @@ export const NAV_LINKS: HeaderLinkProps[] = [
 
 export const CONTACT_INFORMATION = {
   address: ['National Assembly Complex,', 'Three Arms Zone, Abuja'],
-  constituencyOffice: ['Osun Central Senatorial District', 'Oshogbo, Osun State'],
+  constituencyOffice: ['Osun Central Senatorial District,', 'Oshogbo, Osun State'],
   tel: ['+234 701 234 5678', '+234 812 345 6789'],
   whatsapp: '+234 701 234 5678',
   email: ['info@ajagunla1.com'],
@@ -109,6 +109,7 @@ export const CONTACT_CARDS: ContactCardProps[] = [
     texts: CONTACT_INFORMATION.address.map(text => ({
       text,
     })),
+    allowSameRow: true,
   },
   {
     LucideIcon: MapPin,
@@ -117,6 +118,7 @@ export const CONTACT_CARDS: ContactCardProps[] = [
     texts: CONTACT_INFORMATION.constituencyOffice.map(text => ({
       text,
     })),
+    allowSameRow: true,
   },
   {
     LucideIcon: Phone,

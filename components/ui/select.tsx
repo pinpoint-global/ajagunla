@@ -46,7 +46,7 @@ function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "w-full bg-transparent px-4 py-4 text-xs md:text-xs border border-border \
+        "w-full bg-transparent px-4 py-4 text-sm md:text-base border border-border \
         rounded-[6px] focus:ring-2 focus:ring-primary focus-visible:border-primary \
         focus-visible:ring-primary/50 focus:border-transparent transition-all \
         duration-200 font-inter data-[placeholder]:text-muted-foreground \
@@ -107,7 +107,10 @@ function SelectLabel({ className, ...props }: React.ComponentProps<typeof Select
   return (
     <SelectPrimitive.Label
       data-slot="select-label"
-      className={cn('w-full text-muted-foreground px-2 py-1.5 text-xs overflow-hidden', className)}
+      className={cn(
+        'w-full text-muted-foreground px-2 py-1.5 text-sm md:text-base overflow-hidden',
+        className
+      )}
       {...props}
     />
   );
@@ -122,7 +125,7 @@ function SelectItem({
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        "w-full grid grid-cols-[1fr_1.5rem] items-center gap-2 focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative cursor-default rounded-[6px] py-2 px-3 text-xs md:text-xs font-normal font-inter outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 overflow-hidden",
+        "w-full grid grid-cols-[1fr_1.5rem] items-center gap-2 focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative cursor-default rounded-[6px] py-2 px-3 text-sm md:text-base font-normal font-inter outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 overflow-hidden",
         className
       )}
       {...props}>

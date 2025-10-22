@@ -18,7 +18,7 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground section-padding">
       <div className="regular-container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-[0.9375rem] mb-12">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
@@ -86,7 +86,7 @@ export const Footer = () => {
               className="hover:text-secondary-foreground hover:underline transition-all duration-200">
               Terms of Service
             </a> */}
-            <p className="flex items-center gap-1">
+            <p className="flex items-center gap-1 text-sm">
               <span className="">Powered by</span>{' '}
               <a
                 href="https://pinpoint.ng"
