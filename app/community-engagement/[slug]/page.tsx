@@ -3,6 +3,6 @@ import { MongooseToFrontend } from '@/lib/types/general';
 
 export type FullService = MongooseToFrontend<IService>;
 
-export default function ServicePage() {
+export default function CommunityPage() {
   return <></>;
 }

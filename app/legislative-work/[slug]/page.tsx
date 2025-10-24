@@ -3,6 +3,6 @@ import { MongooseToFrontend } from '@/lib/types/general';
 
 export type FullProject = MongooseToFrontend<IProject>;
 
-export default function ProjectPage() {
+export default function LegislativeWorkPage() {
   return <></>;
 }
