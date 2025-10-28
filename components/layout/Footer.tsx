@@ -16,7 +16,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-secondary-foreground section-padding">
+    <footer className="bg-secondary text-secondary-foreground pt-10 md:pt-12 lg:pt-14">
       <div className="regular-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-[0.9375rem] mb-12">
           {/* Company Info */}
@@ -28,7 +28,7 @@ export const Footer = () => {
                 linkProps={{ href: '/' }}
               />
             </div>
-            <p className="text-secondary-foreground/50 text-sm">
+            <p className="text-secondary-foreground/80 text-[0.9375rem] leading-[1.6]">
               Senator Olubiyi Fadeyi-Ajagunla - Committed to community development, education, and
               empowerment. Serving the people of Osun Central Senatorial District.
             </p>
@@ -62,7 +62,7 @@ export const Footer = () => {
           {/* Office Hours */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-accent">Office Hours</h3>
-            <ul className="space-y-2 text-sm text-secondary-foreground/80">
+            <ul className="space-y-2 text-[0.9375rem] text-secondary-foreground/80">
               {CONTACT_INFORMATION.officeHours.map((item, idx) => (
                 <OfficeHourRow key={idx} {...item} />
               ))}
@@ -71,8 +71,8 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center text-secondary-foreground/50">
-          <p className="text-sm">
+        <div className="border-t border-secondary-foreground/10 py-6 flex flex-col md:flex-row justify-between items-center text-secondary-foreground/50">
+          <p className="text-[0.9375rem]">
             &copy; {currentYear} Senator Olubiyi Fadeyi-Ajagunla. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
@@ -86,7 +86,7 @@ export const Footer = () => {
               className="hover:text-secondary-foreground hover:underline transition-all duration-200">
               Terms of Service
             </a> */}
-            <p className="flex items-center gap-1 text-sm">
+            <p className="flex items-center gap-1 text-[0.9375rem]">
               <span className="">Powered by</span>{' '}
               <a
                 href="https://pinpoint.ng"

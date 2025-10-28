@@ -9,6 +9,8 @@ import { AboutSummary } from '@/components/sections/home/About';
 import { CommunityEngagementProps } from '@/components/sections/home/Community';
 import { HeroQuickStats } from '@/components/sections/home/Hero';
 import { LegislativeHighlightProps } from '@/components/sections/home/Legislative';
+import { ImpactCardProps } from '@/components/sections/legislative-work/LegislativeImpact';
+import { CommitteeCardProps } from '@/components/sections/legislative-work/SenateCommittees';
 import {
   Phone,
   Mail,
@@ -76,8 +78,8 @@ export const SEO_DETAILS = {
 export const NAV_LINKS: HeaderLinkProps[] = [
   { text: 'Home', href: '/' },
   { text: 'About', href: '/about', footerOnlySuffix: ' Sen. Olubiyi Fadeyi' },
-  { text: 'Legislative Work', href: '#' },
-  { text: 'Community', href: '#' },
+  { text: 'Legislative Work', href: '/legislative-work' },
+  { text: 'Community', href: '/community-engagement' },
   { text: 'Contact', href: '/contact' },
 ];
 
@@ -328,251 +330,36 @@ export const AWARDS: AwardProps[] = [
   },
 ];
 
-// export const previewProjects = [
-//   'tech-startup-rebrand',
-//   'community-festival-identity',
-//   'organic-skincare-packaging',
-// ];
+export const SENATE_COMMITTEES: CommitteeCardProps[] = [
+  {
+    LucideIcon: Wifi,
+    position: 'Vice Chairman',
+    committee: 'Senate Committee on Communications',
+    note: '10th National Assembly',
+  },
+  {
+    LucideIcon: TrendingUp,
+    position: 'Vice Chairman',
+    committee: 'Senate Committee on Trade & Investment',
+    note: '10th National Assembly',
+  },
+];
 
-// export const projects: FullProject[] = [
-//   {
-//     _id: 'tech-startup-rebrand',
-//     slug: 'tech-startup-rebrand',
-//     title: 'Tech Startup Complete Rebrand',
-//     category: 'Personal Branding',
-//     description:
-//       'Complete brand identity redesign for a growing tech startup, including logo, color palette, and brand guidelines.',
-//     fullDescription:
-//       'A comprehensive rebranding project for an emerging technology company transitioning from startup to scale-up phase. The project encompassed every aspect of the brand identity system.',
-//     image: '/placeholder.svg',
-//     challenge:
-//       'The company had outgrown their initial DIY branding and needed a professional identity that could compete in the enterprise market while maintaining their innovative spirit.',
-//     solution:
-//       'Developed a sophisticated yet approachable brand system featuring a modern geometric logo, vibrant color palette, and comprehensive brand guidelines for consistent application across all touchpoints.',
-//     results: [
-//       '300% increase in brand recognition',
-//       'Successful $5M Series A funding round',
-//       'Featured in major tech publications',
-//       '25% improvement in client conversion rates',
-//     ],
-//     year: '2024',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-//   {
-//     _id: 'community-festival-identity',
-//     slug: 'community-festival-identity',
-//     title: 'Annual Community Festival Identity',
-//     category: 'Community Branding',
-//     description:
-//       'Vibrant brand identity for a local cultural festival celebrating diversity and creativity.',
-//     fullDescription:
-//       'Created a dynamic and inclusive brand identity for an annual community festival that brings together diverse cultures, artists, and local businesses.',
-//     image: '/placeholder.svg',
-//     challenge:
-//       'The festival needed a brand that could appeal to multiple generations and cultural backgrounds while standing out in a crowded event calendar.',
-//     solution:
-//       'Designed a flexible identity system with colorful, modular elements that could be customized for different cultural celebrations while maintaining brand cohesion.',
-//     results: [
-//       '40% increase in attendance',
-//       '50+ local businesses participated',
-//       'Won Best Community Event Award',
-//       'Secured major sponsorships',
-//     ],
-//     year: '2023',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-//   {
-//     _id: 'organic-skincare-packaging',
-//     slug: 'organic-skincare-packaging',
-//     title: 'Organic Skincare Line Packaging',
-//     category: 'Packaging Design',
-//     description:
-//       'Eco-friendly packaging design for a sustainable skincare brand launching their premium product line.',
-//     fullDescription:
-//       'Developed a complete packaging system for an organic skincare brand committed to sustainability and natural ingredients.',
-//     image: '/placeholder.svg',
-//     challenge:
-//       'Create premium packaging that communicates luxury while using eco-friendly materials and maintaining cost-effectiveness for a new market entrant.',
-//     solution:
-//       'Designed minimalist packaging using recyclable materials with elegant typography and nature-inspired illustrations, creating a distinctive shelf presence.',
-//     results: [
-//       'Sold out first production run in 3 weeks',
-//       'Featured in beauty magazines',
-//       'Won sustainable packaging award',
-//       'Expanded to 50+ retail locations',
-//     ],
-//     year: '2024',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-//   {
-//     _id: 'executive-coach-personal-brand',
-//     slug: 'executive-coach-personal-brand',
-//     title: 'Executive Coach Personal Brand',
-//     category: 'Brand Developer',
-//     description:
-//       'Complete personal brand development for a leadership coach transitioning from corporate to entrepreneurship.',
-//     fullDescription:
-//       'End-to-end brand development for an executive coach building their independent practice after 15 years in corporate leadership roles.',
-//     image: '/placeholder.svg',
-//     challenge:
-//       'Position the coach as a credible authority while differentiating from countless other leadership coaches in a saturated market.',
-//     solution:
-//       'Developed a strategic brand platform emphasizing their unique methodology, combined with a premium visual identity and content strategy.',
-//     results: [
-//       'Fully booked within 3 months',
-//       'Speaking engagements at 3 major conferences',
-//       'Published thought leadership articles',
-//       'Premium pricing accepted by clients',
-//     ],
-//     year: '2023',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-//   {
-//     _id: 'restaurant-chain-rebrand',
-//     slug: 'restaurant-chain-rebrand',
-//     title: 'Restaurant Chain Modernization',
-//     category: 'Personal Branding',
-//     description:
-//       'Brand refresh for a 20-year-old restaurant chain targeting younger demographics while honoring heritage.',
-//     fullDescription:
-//       'Modernization project for an established restaurant chain looking to attract millennial and Gen-Z customers without alienating their loyal customer base.',
-//     image: '/placeholder.svg',
-//     challenge:
-//       'Balance tradition with innovation, maintaining brand equity while signaling a fresh, contemporary approach to dining.',
-//     solution:
-//       'Created an evolved brand identity that retained core equity elements while introducing modern aesthetics, updated menu design, and social media presence.',
-//     results: [
-//       '35% increase in under-35 customer segment',
-//       'Social media following grew 200%',
-//       'Successful launch of 5 new locations',
-//       'Positive press coverage in food media',
-//     ],
-//     year: '2024',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-//   {
-//     _id: 'coffee-brand-packaging',
-//     slug: 'coffee-brand-packaging',
-//     title: 'Artisan Coffee Brand Packaging',
-//     category: 'Packaging Design',
-//     description:
-//       'Distinctive packaging series for specialty coffee roaster highlighting origin stories and flavor profiles.',
-//     fullDescription:
-//       "Packaging design for a craft coffee roaster who sources beans directly from farmers and wanted packaging that told each coffee's unique story.",
-//     image: '/placeholder.svg',
-//     challenge:
-//       "Create a cohesive brand family while making each origin's packaging distinctive enough to aid customer selection and build collection appeal.",
-//     solution:
-//       'Developed an illustrated packaging system featuring custom artwork for each origin, unified by consistent typography and structural design.',
-//     results: [
-//       '60% increase in retail sales',
-//       'Packaging featured in design blogs',
-//       'Wholesale accounts doubled',
-//       'Customer collection behavior increased repeat purchases',
-//     ],
-//     year: '2023',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-// ];
-
-// export const services: FullService[] = [
-//   {
-//     _id: 'personal-branding',
-//     slug: 'personal-branding',
-//     iconName: 'Sparkles',
-//     title: 'Personal Branding',
-//     description:
-//       'I teach the art of effective storytelling to communicate personal and professional journeys in a compelling way.',
-//     href: '/services/personal-branding',
-//     colorClass: 'from-accent to-gold-end',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-//   {
-//     _id: 'community-branding',
-//     slug: 'community-branding',
-//     iconName: 'Users',
-//     title: 'Community Branding',
-//     description:
-//       'Building cohesive brand identities that bring communities together and create lasting connections.',
-//     href: '/services/community-branding',
-//     colorClass: 'from-primary to-hero-dark',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-//   {
-//     _id: 'packaging-design',
-//     slug: 'packaging-design',
-//     iconName: 'Package',
-//     title: 'Packaging Design',
-//     description:
-//       'Creating stunning packaging that not only protects products but tells compelling brand stories.',
-//     href: '/services/packaging-design',
-//     colorClass: 'from-gold-start to-accent',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-//   {
-//     _id: 'brand-developer',
-//     slug: 'brand-developer',
-//     iconName: 'Target',
-//     title: 'Brand Developer',
-//     description:
-//       'Comprehensive brand development services to elevate your business and create remarkable market presence.',
-//     href: '/services/brand-developer',
-//     colorClass: 'from-hero-dark to-primary',
-//     createdAt: '',
-//     updatedAt: '',
-//   },
-// ];
-
-// export const getProjectsLookup = () =>
-//   projects.reduce<Partial<Record<string, FullProject>>>((acc, curr) => {
-//     acc[curr.slug] = curr;
-//     return acc;
-//   }, {});
-
-// export const getPreviewProjects = () => {
-//   const samples: ProjectPreviewCardProps[] = [];
-//   const projectsLookup = getProjectsLookup();
-
-//   for (const slug of previewProjects) {
-//     const project = projectsLookup[slug];
-
-//     if (project) {
-//       samples.push({
-//         slug: project.slug,
-//         title: project.title,
-//         description: project.description,
-//         category: project.category,
-//         image: project.image,
-//         year: project.year,
-//       });
-//     }
-//   }
-
-//   return samples;
-// };
-
-// export const getServicesLookup = () =>
-//   services.reduce<Partial<Record<string, FullService>>>((acc, curr) => {
-//     acc[curr.slug] = curr;
-//     return acc;
-//   }, {});
-
-// export const getServiceSummariess = () => {
-//   return services.map<ServicePreviewProps>(service => ({
-//     slug: service.slug,
-//     title: service.title,
-//     description: service.description,
-//     iconName: service.iconName,
-//     colorClass: service.colorClass,
-//     href: service.href,
-//   }));
-// };
+export const LEGISLATIVE_IMPACT: ImpactCardProps[] = [
+  {
+    heading: '2023',
+    text: 'Elected to Senate',
+  },
+  {
+    heading: '2',
+    text: 'Committee Vice Chairman',
+  },
+  {
+    heading: '14+',
+    text: 'Youth Employed',
+  },
+  {
+    heading: '100,000+',
+    text: 'Lives Impacted',
+  },
+];

@@ -1,3 +1,8 @@
+import { MainLayout } from '@/components/layout/MainLayout';
+import { FeaturedImage } from '@/components/sections/legislative-work/FeaturedImage';
+import { LegislativeWorkHero } from '@/components/sections/legislative-work/Hero';
+import { LegislativeImpact } from '@/components/sections/legislative-work/LegislativeImpact';
+import { SenateCommittees } from '@/components/sections/legislative-work/SenateCommittees';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,5 +17,12 @@ export const metadata: Metadata = {
 };
 
 export default async function LegislativeWorkPage() {
-  return <></>;
+  return (
+    <MainLayout>
+      <LegislativeWorkHero />
+      <FeaturedImage />
+      <SenateCommittees />
+      <LegislativeImpact />
+    </MainLayout>
+  );
 }
