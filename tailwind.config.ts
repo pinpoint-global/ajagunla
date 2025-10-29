@@ -91,7 +91,7 @@ export default {
             height: '0',
           },
         },
-        'fade-in': {
+        'fade-in-up': {
           '0%': {
             opacity: '0',
             transform: 'translateY(20px)',
@@ -99,6 +99,14 @@ export default {
           '100%': {
             opacity: '1',
             transform: 'translateY(0)',
+          },
+        },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
           },
         },
         'slide-up': {

@@ -10,6 +10,10 @@ import { CommunityEngagementProps } from '@/components/sections/home/Community';
 import { HeroQuickStats } from '@/components/sections/home/Hero';
 import { LegislativeHighlightProps } from '@/components/sections/home/Legislative';
 import { ImpactCardProps } from '@/components/sections/legislative-work/LegislativeImpact';
+import {
+  ProjectCategoryButton,
+  ProjectSummary,
+} from '@/components/sections/legislative-work/LegislativeProjects';
 import { CommitteeCardProps } from '@/components/sections/legislative-work/SenateCommittees';
 import {
   Phone,
@@ -25,6 +29,7 @@ import {
   Briefcase,
   Heart,
   Calendar,
+  Building2,
 } from 'lucide-react';
 
 const liveUrl = process.env.live_url || 'https://ajagunla1.com';
@@ -361,5 +366,79 @@ export const LEGISLATIVE_IMPACT: ImpactCardProps[] = [
   {
     heading: '100,000+',
     text: 'Lives Impacted',
+  },
+];
+
+export const LEGISLATIVE_PROJECT_CATEGORIES = [
+  'all',
+  'education',
+  'youth',
+  'infrastructure',
+  'technology',
+] as const;
+export type LegislativeProjectCategory = (typeof LEGISLATIVE_PROJECT_CATEGORIES)[number];
+
+export const PROJECT_CATEGORY_BUTTONS: ProjectCategoryButton[] = [
+  { value: 'all', label: 'All Initiatives', LucideIcon: Briefcase },
+  { value: 'education', label: 'Education', LucideIcon: GraduationCap },
+  { value: 'youth', label: 'Youth Empowerment', LucideIcon: Users },
+  { value: 'infrastructure', label: 'Infrastructure', LucideIcon: Building2 },
+  { value: 'technology', label: 'Technology & Innovation', LucideIcon: Wifi },
+];
+
+export const LEGISLATIVE_PROJECTS: ProjectSummary[] = [
+  {
+    slug: 'noun-classroom-block-construction',
+    category: 'education',
+    title: 'NOUN Classroom Block Construction',
+    description:
+      'Facilitating the construction of a modern classroom block for the National Open University in Oke-Ila to enhance educational infrastructure',
+    impact: 'Improved learning environment for students',
+    status: 'ongoing',
+  },
+  {
+    slug: 'federal-fire-service-employment',
+    category: 'youth',
+    title: 'Federal Fire Service Employment',
+    description:
+      'Secured Federal Fire Service positions for 14 youths from Osun Central Senatorial District',
+    impact: '14 youths employed (October 2025)',
+    status: 'completed',
+  },
+  {
+    slug: 'scholarship-and-educational-support',
+    category: 'education',
+    title: 'Scholarship & Educational Support',
+    description:
+      'Through Ajagunla Foundation, providing scholarships and educational materials to deserving students across Osun Central',
+    impact: 'Hundreds of students supported annually',
+    status: 'active',
+  },
+  {
+    slug: 'community-infrastructure-development',
+    category: 'infrastructure',
+    title: 'Community Infrastructure Development',
+    description:
+      'Facilitating rural infrastructure improvements including roads, water supply, and electrification projects',
+    impact: 'Multiple communities benefited',
+    status: 'ongoing',
+  },
+  {
+    slug: 'skills-acquisition-program',
+    category: 'youth',
+    title: 'Skills Acquisition Programs',
+    description:
+      'Vocational training and skills acquisition initiatives for youth empowerment and economic independence',
+    impact: 'Thousands trained in various skills',
+    status: 'active',
+  },
+  {
+    slug: 'digital-literacy-initiative',
+    category: 'technology',
+    title: 'Digital Literacy Initiative',
+    description:
+      'ICT training programs for youth and women to enhance digital skills and opportunities',
+    impact: 'Bridging the digital divide',
+    status: 'active',
   },
 ];

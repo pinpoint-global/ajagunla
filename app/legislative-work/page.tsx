@@ -2,8 +2,10 @@ import { MainLayout } from '@/components/layout/MainLayout';
 import { FeaturedImage } from '@/components/sections/legislative-work/FeaturedImage';
 import { LegislativeWorkHero } from '@/components/sections/legislative-work/Hero';
 import { LegislativeImpact } from '@/components/sections/legislative-work/LegislativeImpact';
+import { LegislativeProjects } from '@/components/sections/legislative-work/LegislativeProjects';
 import { SenateCommittees } from '@/components/sections/legislative-work/SenateCommittees';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Legislative Work & Achievements | Senator Fadeyi-Ajagunla',
@@ -22,6 +24,9 @@ export default async function LegislativeWorkPage() {
       <LegislativeWorkHero />
       <FeaturedImage />
       <SenateCommittees />
+      <Suspense fallback={null}>
+        <LegislativeProjects />
+      </Suspense>
       <LegislativeImpact />
     </MainLayout>
   );

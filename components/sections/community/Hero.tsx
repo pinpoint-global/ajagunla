@@ -8,9 +8,9 @@ export const CommunityEngagementHero = () => {
       image={{
         src: '/images/senator-fadeyi-6.webp',
         alt: 'Senator Olubiyi Fadeyi-Ajagunla - Community engagement and service',
-        className: 'object-top',
+        className: 'object-bottom',
       }}
-      imageHeight={600}
+      imageHeight={450}
     />
   );
 };

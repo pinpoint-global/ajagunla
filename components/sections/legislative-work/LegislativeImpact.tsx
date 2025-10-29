@@ -8,7 +8,7 @@ export const LegislativeImpact = () => {
       <div className="regular-container">
         <SectionHeading title="Legislative Impact" whiteText />
 
-        <FadeInUpWrap className="grid md:grid-cols-4 gap-6">
+        <FadeInUpWrap className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {LEGISLATIVE_IMPACT.map((item, idx) => (
             <ImpactCard key={idx} {...item} />
           ))}

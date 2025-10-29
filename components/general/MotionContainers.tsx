@@ -8,6 +8,7 @@ export const FadeInUpWrap = ({
   children,
   className,
   amount = 0.3,
+  wrapKey = null,
 }: PropsWithChildren<{
   className?: string;
   /**
@@ -16,11 +17,13 @@ export const FadeInUpWrap = ({
    * It represents how much of the element should be in view before the animation starts
    */
   amount?: number;
+  wrapKey?: string | number | null;
 }>) => {
   const { siteLoading } = useSiteStore(state => state);
 
   return (
     <motion.div
+      key={wrapKey}
       initial={{ opacity: 0, y: 50 }}
       whileInView={siteLoading ? {} : { opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
