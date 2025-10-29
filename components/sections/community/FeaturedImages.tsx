@@ -1,3 +1,4 @@
+'use client';
 import { FadeInUpWrap } from '@/components/general/MotionContainers';
 import Image from 'next/image';
 

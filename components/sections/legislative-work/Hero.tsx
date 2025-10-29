@@ -10,7 +10,8 @@ export const LegislativeWorkHero = () => {
         alt: 'Senator Olubiyi Fadeyi-Ajagunla - Legislative leadership',
         className: 'object-top',
       }}
-      imageHeight={600}
+      widthWrapperClass="max-w-[450px] aspect-[0.85] mx-auto"
+      hideHeightClass
     />
   );
 };

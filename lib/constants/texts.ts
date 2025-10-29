@@ -4,6 +4,8 @@ import { HeaderLinkProps } from '@/components/layout/Header';
 import { BusinessProps } from '@/components/sections/about/Business';
 import { EducationProps } from '@/components/sections/about/Education';
 import { AwardProps } from '@/components/sections/about/Recognition';
+import { FoundationAchievement } from '@/components/sections/community/AjagunlaFoundation';
+import { CommunityInitiativeSummary } from '@/components/sections/community/CommunityInitiatives';
 import { ContactCardProps } from '@/components/sections/contact/Content';
 import { AboutSummary } from '@/components/sections/home/About';
 import { CommunityEngagementProps } from '@/components/sections/home/Community';
@@ -30,6 +32,7 @@ import {
   Heart,
   Calendar,
   Building2,
+  Handshake,
 } from 'lucide-react';
 
 const liveUrl = process.env.live_url || 'https://ajagunla1.com';
@@ -440,5 +443,60 @@ export const LEGISLATIVE_PROJECTS: ProjectSummary[] = [
       'ICT training programs for youth and women to enhance digital skills and opportunities',
     impact: 'Bridging the digital divide',
     status: 'active',
+  },
+];
+
+export const AJAGUNLA_FOUNDATION_ACHIEVEMENTS: FoundationAchievement[] = [
+  {
+    value: 1000,
+    text: 'Scholarships Awarded',
+  },
+  {
+    value: 50,
+    text: 'Communities Reached',
+  },
+  {
+    value: 5000,
+    text: 'People Empowered',
+  },
+];
+
+export const COMMUNITY_INITIATIVE_SUMMARIES: CommunityInitiativeSummary[] = [
+  {
+    slug: 'education-support',
+    LucideIcon: GraduationCap,
+    title: 'Education Support',
+    description:
+      'Scholarship programs and educational infrastructure development across Osun Central',
+  },
+  {
+    slug: 'healthcare-access',
+    LucideIcon: Heart,
+    title: 'Healthcare Access',
+    description: 'Health fairs, medical outreach programs, and healthcare facility improvements',
+  },
+  {
+    slug: 'youth-empowerment',
+    LucideIcon: Users,
+    title: 'Youth Empowerment',
+    description: 'Skills training, job placements, and entrepreneurship support for young people',
+  },
+  {
+    slug: 'infrastructure',
+    LucideIcon: Building2,
+    title: 'Infrastructure Development',
+    description: 'Road construction, electrification, and water supply projects',
+  },
+  {
+    slug: 'women-empowerment',
+    LucideIcon: Handshake,
+    title: 'Women Empowerment',
+    description: 'Economic empowerment programs and leadership training for women',
+  },
+  {
+    slug: 'community-development',
+    LucideIcon: Award,
+    title: 'Community Development',
+    description: 'Supporting local initiatives and strengthening community organizations',
   },
 ];

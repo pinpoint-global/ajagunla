@@ -357,6 +357,18 @@
     @apply py-16 md:py-24 lg:py-[6.5rem];
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div {
+    @apply text-wrap break-words;
+  }
+
   .btn-hero {
     @apply bg-primary hover:bg-primary-light text-primary-foreground transition-all duration-300 shadow-elegant hover:shadow-gold hover:-translate-y-0.5;
   }

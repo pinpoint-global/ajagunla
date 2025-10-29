@@ -16,7 +16,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-secondary-foreground pt-10 md:pt-12 lg:pt-14">
+    <footer className="bg-secondary text-secondary-foreground pt-16 md:pt-16 lg:pt-20 2xl:pt-28">
       <div className="regular-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-[0.9375rem] mb-12">
           {/* Company Info */}

@@ -9,6 +9,8 @@ export const ContactHero = () => {
         src: '/images/senator-fadeyi-4.webp',
         alt: 'Senator Olubiyi Fadeyi-Ajagunla - Ready to serve and assist you',
       }}
+      widthWrapperClass="max-w-[450px] aspect-[0.95] mx-auto"
+      hideHeightClass
     />
   );
 };

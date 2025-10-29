@@ -10,7 +10,8 @@ export const CommunityEngagementHero = () => {
         alt: 'Senator Olubiyi Fadeyi-Ajagunla - Community engagement and service',
         className: 'object-bottom',
       }}
-      imageHeight={450}
+      widthWrapperClass="max-w-[450px] aspect-[0.95] mx-auto"
+      hideHeightClass
     />
   );
 };

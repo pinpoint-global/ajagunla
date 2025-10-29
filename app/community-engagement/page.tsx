@@ -1,4 +1,6 @@
 import { MainLayout } from '@/components/layout/MainLayout';
+import { AjagunlaFoundation } from '@/components/sections/community/AjagunlaFoundation';
+import { CommunityInitiatives } from '@/components/sections/community/CommunityInitiatives';
 import { FeaturedImages } from '@/components/sections/community/FeaturedImages';
 import { CommunityEngagementHero } from '@/components/sections/community/Hero';
 import { Metadata } from 'next';
@@ -19,6 +21,8 @@ export default async function CommunityEngagementPage() {
     <MainLayout>
       <CommunityEngagementHero />
       <FeaturedImages />
+      <AjagunlaFoundation />
+      <CommunityInitiatives />
     </MainLayout>
   );
 }
