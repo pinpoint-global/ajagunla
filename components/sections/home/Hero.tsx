@@ -16,7 +16,7 @@ export const HomeHero = () => {
       <div className="absolute inset-0 z-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/senator-fadeyi-2.webp"
+          src="https://static.ajagunla1.com/images/senator-fadeyi-2.webp"
           alt="Senator Olubiyi Fadeyi-Ajagunla - Distinguished Senator representing Osun Central Senatorial District"
           className="w-full h-full object-cover object-[top_center]"
         />

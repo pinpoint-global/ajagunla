@@ -24,7 +24,7 @@ export const CommunityPreview = () => {
             className="">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/senator-fadeyi-7.webp"
+              src="https://static.ajagunla1.com/images/senator-fadeyi-7.webp"
               alt="Community Engagement"
               className="w-full max-w-[400px] 2xl:max-w-[450px] object-cover rounded-lg shadow-elegant mx-auto 2xl:ml-auto 2xl:mr-0"
             />

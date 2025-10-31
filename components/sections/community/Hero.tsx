@@ -6,7 +6,7 @@ export const CommunityEngagementHero = () => {
       heading="Community Engagement"
       text="Building stronger communities through active engagement, meaningful partnerships, and impactful initiatives"
       image={{
-        src: '/images/senator-fadeyi-6.webp',
+        src: 'https://static.ajagunla1.com/images/senator-fadeyi-6.webp',
         alt: 'Senator Olubiyi Fadeyi-Ajagunla - Community engagement and service',
         className: 'object-bottom',
       }}

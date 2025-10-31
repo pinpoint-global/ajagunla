@@ -7,7 +7,7 @@ export const AboutHero = () => {
       text="A dedicated public servant, accomplished businessman, and committed philanthropist
         serving the people of Osun Central Senatorial District."
       image={{
-        src: '/images/senator-fadeyi.webp',
+        src: 'https://static.ajagunla1.com/images/senator-fadeyi.webp',
         alt: 'Senator Olubiyi Fadeyi-Ajagunla - Legislative leadership',
       }}
       hideHeightClass

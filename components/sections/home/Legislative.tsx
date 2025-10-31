@@ -26,7 +26,7 @@ export const LegislativePreview = () => {
           className="mb-12">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/legislative-work.webp"
+            src="https://static.ajagunla1.com/images/legislative-work.webp"
             alt="Senator Fadeyi-Ajagunla at legislative work"
             className="w-full h-[400px] object-cover rounded-lg shadow-elegant"
           />

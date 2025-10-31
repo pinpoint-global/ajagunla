@@ -10,7 +10,7 @@ import { output, z, ZodArray, ZodEmail, ZodObject, ZodString } from 'zod';
 import { CheckCheck } from 'lucide-react';
 import { RegularSelect, RegularSelectProps } from '@/components/atoms/RegularSelect';
 import { cn } from '@/lib/utils';
-import { Card, CardContent, CardHeader, CardTitle } from '../general/Card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export type StringOrStringArraySchema = ZodString | ZodEmail | ZodArray<ZodString>;
 export interface RequestFormProps<

@@ -10,7 +10,7 @@ export const FeaturedImages = () => {
           <FadeInUpWrap
             className={`w-full max-w-[400px] lg:max-w-[450px] h-[400px] lg:h-[550px] shadow-elegant rounded-lg mx-auto relative overflow-hidden`}>
             <Image
-              src="/images/senator-fadeyi-7.webp"
+              src="https://static.ajagunla1.com/images/senator-fadeyi-7.webp"
               alt="Senator Fadeyi-Ajagunla at community event"
               className="w-full h-full object-cover object-top rounded-lg shadow-elegant"
               fill
@@ -20,7 +20,7 @@ export const FeaturedImages = () => {
           <FadeInUpWrap
             className={`w-full max-w-[400px] lg:max-w-[450px] h-[400px] lg:h-[550px] shadow-elegant rounded-lg mx-auto relative overflow-hidden`}>
             <Image
-              src="/images/senator-fadeyi-8.webp"
+              src="https://static.ajagunla1.com/images/senator-fadeyi-8.webp"
               alt="Senator Olubiyi Fadeyi-Ajagunla engaging with constituents"
               className="w-full h-full object-cover object-top rounded-lg shadow-elegant"
               fill

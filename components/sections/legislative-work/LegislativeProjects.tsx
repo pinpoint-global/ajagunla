@@ -1,15 +1,18 @@
 'use client';
 
-import { GhostBtn } from '@/components/atoms/GhostBtn';
 import { RegularBtn } from '@/components/atoms/RegularBtn';
+import { SectionCard, CardGrid } from '@/components/general/Card';
+import { SectionContainer } from '@/components/general/SectionContainer';
 import { FadeInUpWrap } from '@/components/general/MotionContainers';
 import { SectionHeading } from '@/components/general/SectionHeading';
 import {
   LEGISLATIVE_PROJECT_CATEGORIES,
-  LEGISLATIVE_PROJECTS,
+  LEGISLATIVE_PROJECT_SUMMARIES,
   PROJECT_CATEGORY_BUTTONS,
 } from '@/lib/constants/texts';
+import { filterByCategory, getLegislativeWorkUrl } from '@/lib/utils/general';
 import { LucideIconComp } from '@/lib/types/general';
+import { ProjectSummary } from '@/lib/types/legislative-work';
 import { capitalize } from 'lodash';
 import { Building2, GraduationCap, TrendingUp, Users, Wifi } from 'lucide-react';
 import { parseAsStringLiteral, useQueryState } from 'nuqs';
@@ -22,44 +25,40 @@ export const LegislativeProjects = () => {
   );
 
   const { filteredProjects, projectsWrapKey } = useMemo(() => {
-    const filteredProjects =
-      category === 'all'
-        ? LEGISLATIVE_PROJECTS
-        : LEGISLATIVE_PROJECTS.filter(p => p.category === category);
+    const filtered = filterByCategory(LEGISLATIVE_PROJECT_SUMMARIES, category);
+    const wrapKey = Date.now();
 
-    const projectsWrapKey = Date.now();
-
-    return { filteredProjects, projectsWrapKey };
+    return { filteredProjects: filtered, projectsWrapKey: wrapKey };
   }, [category]);
 
   return (
-    <section className="section-padding">
-      <div className="regular-container">
-        <SectionHeading title="Key Initiatives & Projects" className="mb-12" />
+    <SectionContainer>
+      <SectionHeading title="Key Initiatives & Projects" className="mb-12" />
 
-        {/* Category Filter */}
-        <FadeInUpWrap className="flex flex-wrap justify-center gap-3 mb-12">
-          {PROJECT_CATEGORY_BUTTONS.map(item => (
-            <ProjectCategoryBtn
-              key={item.value}
-              {...item}
-              isActive={item.value === category}
-              setCategory={setCategory}
-            />
-          ))}
-        </FadeInUpWrap>
+      {/* Category Filter */}
+      <FadeInUpWrap className="flex flex-wrap justify-center gap-3 mb-12">
+        {PROJECT_CATEGORY_BUTTONS.map(item => (
+          <ProjectCategoryBtn
+            key={item.value}
+            {...item}
+            isActive={item.value === category}
+            setCategory={setCategory}
+          />
+        ))}
+      </FadeInUpWrap>
 
-        {/* Projects Grid */}
-        <FadeInUpWrap
-          wrapKey={projectsWrapKey}
-          amount={0}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, idx) => (
-            <ProjectSummaryCard key={project.slug} {...project} index={idx} />
-          ))}
-        </FadeInUpWrap>
-      </div>
-    </section>
+      {/* Projects Grid */}
+      <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
+        {filteredProjects.map((project, idx) => (
+          <ProjectSummaryCard
+            key={project.slug}
+            {...project}
+            index={idx}
+            wrapKey={projectsWrapKey}
+          />
+        ))}
+      </CardGrid>
+    </SectionContainer>
   );
 };
 
@@ -93,14 +92,7 @@ const ProjectCategoryBtn = ({
   );
 };
 
-export interface ProjectSummary {
-  slug: string;
-  category: string;
-  title: string;
-  description: string;
-  impact: string;
-  status: string;
-}
+// ProjectSummary interface moved to lib/types/legislative-work.ts
 
 const ProjectSummaryCard = ({
   slug,
@@ -110,13 +102,15 @@ const ProjectSummaryCard = ({
   impact,
   status,
   index,
-}: ProjectSummary & { index: number }) => {
+  wrapKey,
+}: ProjectSummary & { index: number; wrapKey?: string | number | null }) => {
   return (
-    <GhostBtn
-      linkProps={{ href: `/legislative-work/${slug}` }}
-      className="w-full h-full animate-fade-in-up card-elegant hover:shadow-gold transition-shadow text-start py-8 px-4 sm:px-8 md:px-6 lg:px-8"
+    <SectionCard
+      href={getLegislativeWorkUrl(slug)}
+      className="w-full h-full text-start py-8 px-4 sm:px-8 md:px-6 lg:px-8"
       wrapClassName="h-full"
-      style={{ animationDelay: `${index * 0.1}s` }}>
+      wrapKey={wrapKey}
+      index={index}>
       <div className="h-full flex flex-col justify-between">
         <div className="flex items-start justify-between mb-8">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
@@ -144,6 +138,6 @@ const ProjectSummaryCard = ({
           </div>
         </div>
       </div>
-    </GhostBtn>
+    </SectionCard>
   );
 };

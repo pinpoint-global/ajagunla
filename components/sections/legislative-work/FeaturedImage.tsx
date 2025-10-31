@@ -8,7 +8,7 @@ export const FeaturedImage = () => {
         <FadeInUpWrap
           className={`w-full h-[500px] shadow-elegant rounded-lg relative overflow-hidden`}>
           <Image
-            src="/images/legislative-work.webp"
+            src="https://static.ajagunla1.com/images/legislative-work.webp"
             alt="Senator Fadeyi-Ajagunla engaged in legislative work"
             className="w-full h-full object-cover"
             fill
