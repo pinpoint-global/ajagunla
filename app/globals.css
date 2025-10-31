@@ -348,13 +348,25 @@
     @apply min-h-screen w-full bg-background text-foreground font-sans text-[1rem] leading-[1.5] tracking-[0.05em] break-words text-wrap text-start;
   }
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4;
   }
   .regular-container {
     @apply w-full max-w-7xl 2xl:max-w-[1300px] 3xl:max-w-[1500px] mx-auto px-4 sm:px-8 md:px-12 lg:px-8 xl:px-10 2xl:px-16 3xl:px-20;
   }
   .section-padding {
     @apply py-16 md:py-24 lg:py-[6.5rem];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div {
+    @apply text-wrap break-words;
   }
 
   .btn-hero {

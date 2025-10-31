@@ -305,6 +305,14 @@ export const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 };
 
+// Re-export utilities from other files for convenience
+export * from './metadata';
+export * from './animations';
+export * from './filters';
+export * from './routes';
+export * from './legislative-work';
+export * from './community-initiative';
+
 export function getOrientationLabel(degrees: number): string {
   // Normalize degrees to [0, 360] just incase degrees < 0 or degrees > 359
   const normalized = ((degrees % 360) + 360) % 360;

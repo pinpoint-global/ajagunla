@@ -1,0 +1,17 @@
+import { SharedHero } from '../shared/Hero';
+
+export const CommunityEngagementHero = () => {
+  return (
+    <SharedHero
+      heading="Community Engagement"
+      text="Building stronger communities through active engagement, meaningful partnerships, and impactful initiatives"
+      image={{
+        src: 'https://static.ajagunla1.com/images/senator-fadeyi-6.webp',
+        alt: 'Senator Olubiyi Fadeyi-Ajagunla - Community engagement and service',
+        className: 'object-bottom',
+      }}
+      widthWrapperClass="max-w-[450px] aspect-[0.95] mx-auto"
+      hideHeightClass
+    />
+  );
+};

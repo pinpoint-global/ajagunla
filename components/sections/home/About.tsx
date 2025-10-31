@@ -27,7 +27,7 @@ export const AboutPreview = () => {
             className="w-full max-w-xl h-[500px] sm:h-[550px] md:h-full lg:h-[550px] justify-self-center md:justify-self-end relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/senator-fadeyi.webp"
+              src="https://static.ajagunla1.com/images/senator-fadeyi.webp"
               alt="Senator Olubiyi Fadeyi-Ajagunla - Dedicated public servant and philanthropist"
               className="w-full h-full absolute inset-0 object-cover lg:object-[top_center] rounded-lg shadow-elegant"
             />

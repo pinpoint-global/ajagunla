@@ -10,9 +10,16 @@ export interface SectionHeadingProps {
   title: string;
   text?: string;
   className?: string;
+  whiteText?: boolean;
 }
 
-export const SectionHeading = ({ Icon, title, text, className }: SectionHeadingProps) => {
+export const SectionHeading = ({
+  Icon,
+  title,
+  text,
+  className,
+  whiteText,
+}: SectionHeadingProps) => {
   const { siteLoading } = useSiteStore(state => state);
 
   return (
@@ -27,11 +34,15 @@ export const SectionHeading = ({ Icon, title, text, className }: SectionHeadingP
           className={`size-12 text-primary ${className?.includes('text-start') ? '' : 'mx-auto'}`}
         />
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary">
+      <h2
+        className={`text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight 
+        ${whiteText ? 'text-primary-foreground' : 'text-primary'}`}>
         {title}
       </h2>
       <p
-        className={`text-sm md:text-xl text-muted-foreground max-w-3xl ${className?.includes('text-start') ? '' : 'px-2 mx-auto'}`}>
+        className={`max-w-3xl text-sm md:text-xl 
+        ${whiteText ? 'text-primary-foreground/90' : 'text-muted-foreground'} 
+        ${className?.includes('text-start') ? '' : 'px-2 mx-auto'}`}>
         {text}
       </p>
     </motion.div>

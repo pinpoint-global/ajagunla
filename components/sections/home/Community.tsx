@@ -21,12 +21,12 @@ export const CommunityPreview = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true, amount: 0.3 }}
-            className="animate-fade-in">
+            className="">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/community-engagement.webp"
+              src="https://static.ajagunla1.com/images/senator-fadeyi-7.webp"
               alt="Community Engagement"
-              className="w-full h-[400px] object-cover rounded-lg shadow-elegant"
+              className="w-full max-w-[400px] 2xl:max-w-[450px] object-cover rounded-lg shadow-elegant mx-auto 2xl:ml-auto 2xl:mr-0"
             />
           </motion.div>
 
@@ -35,7 +35,7 @@ export const CommunityPreview = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true, amount: 0.3 }}
-            className="space-y-8 animate-fade-in">
+            className="space-y-8">
             {COMMUNITY_SUMMARIES.map((item, idx) => (
               <CommunityEngagementCard key={idx} {...item} index={idx} />
             ))}

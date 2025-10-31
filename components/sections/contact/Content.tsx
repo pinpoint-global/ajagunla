@@ -42,24 +42,26 @@ export const ContactPageContent = () => {
               </div>
             </div>
 
-            <div className="card-elegant py-6 px-4 md:px-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Office Hours</h3>
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                <div className="space-y-2 text-sm">
-                  {CONTACT_INFORMATION.officeHours.map((item, idx) => (
-                    <OfficeHourCard key={idx} {...item} />
-                  ))}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
+              <div className="card-elegant py-6 px-4 md:px-6">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Office Hours</h3>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div className="space-y-2 text-sm">
+                    {CONTACT_INFORMATION.officeHours.map((item, idx) => (
+                      <OfficeHourCard key={idx} {...item} />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="card-elegant py-6 px-4 md:px-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                {SOCIALS.map((item, idx) => (
-                  <SocialBtn key={idx} {...item} />
-                ))}
+              <div className="card-elegant py-6 px-4 md:px-6">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Follow Us</h3>
+                <div className="flex gap-4">
+                  {SOCIALS.map((item, idx) => (
+                    <SocialBtn key={idx} {...item} />
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -74,9 +76,10 @@ export interface ContactCardProps {
   title: string;
   href?: string;
   texts: ContactCardTextProps[];
+  allowSameRow?: boolean;
 }
 
-const ContactInfoCard = ({ LucideIcon, title, href, texts }: ContactCardProps) => {
+const ContactInfoCard = ({ LucideIcon, title, href, texts, allowSameRow }: ContactCardProps) => {
   return (
     <div className="flex items-start gap-3">
       <LucideIcon className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -86,7 +89,8 @@ const ContactInfoCard = ({ LucideIcon, title, href, texts }: ContactCardProps) =
           {...(href ? { linkProps: { href, target: '_blank', rel: 'noreferrer noopener' } } : {})}
           className={`w-full text-muted-foreground ${href ? 'hover:text-primary/60' : ''}`}
           wrapClassName="w-full">
-          <div className="w-full grid gap-3 text-start text-sm">
+          <div
+            className={`w-full flex flex-col flex-wrap ${allowSameRow ? 'sm:flex-row lg:flex-col' : ''} gap-y-3 gap-x-1 text-start text-sm`}>
             {texts.map((item, idx) => (
               <ContactCardText
                 key={idx}

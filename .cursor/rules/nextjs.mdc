@@ -1,0 +1,24 @@
+---
+description: Next.js Guard Rails
+globs: ["src/**/*.{ts,tsx,js,jsx}", "app/**/*.{ts,tsx,js,jsx}"]
+alwaysApply: true
+---
+
+## File & Folder Rules
+- Never modify or delete files in the `app/` or `pages/` directories without user confirmation.
+- Preserve route segment structure (`layout.tsx`, `page.tsx`, `loading.tsx`, etc.).
+- Always use Server Components by default unless explicitly asked to use a Client Component.
+- Never import server-only modules (e.g. `fs`, `path`) into Client Components.
+
+## Styling & Conventions
+- Use Tailwind or CSS Modules depending on the project’s existing pattern.
+- Do not replace existing class names; add new ones if needed.
+- Maintain consistent component naming — use PascalCase for components, camelCase for hooks.
+
+## API Rules
+- When editing API routes under `/app/api` or `/pages/api`, maintain the existing handler structure (do not rewrite to Express or other frameworks).
+- Validate all request body inputs (e.g., with `zod` or similar) before using them.
+
+## Performance & SEO
+- Use `next/head` or `metadata` for SEO.
+- Avoid unnecessary re-renders; prefer memoization for heavy components.
