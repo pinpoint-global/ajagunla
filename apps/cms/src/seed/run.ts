@@ -8,8 +8,11 @@ import {
   pageContactSeed,
   pageHomeSeed,
   pageLegislativeSeed,
+  SEED_MEDIA,
+  SEED_SITE_URL,
   siteGlobalSeed,
 } from './site-pages';
+import { buildArticleJsonLd, buildNonprofitProgramJsonLd } from './structured-data';
 import { getOrUploadPublicFile } from './upload-from-public';
 
 const SITE_GLOBAL_UID = 'api::site-global.site-global';
@@ -95,26 +98,43 @@ async function clearSeedData(strapi: Core.Strapi) {
 }
 
 async function seedSingles(strapi: Core.Strapi) {
-  const legislativeFeaturedId = await getOrUploadPublicFile(
-    strapi,
-    pageLegislativeSeed.featuredImageUrl
-  );
+  const logoFullId = await getOrUploadPublicFile(strapi, SEED_MEDIA.logoFull);
+  const logoMarkId = await getOrUploadPublicFile(strapi, SEED_MEDIA.logoMark);
+  const seoOgDefaultId = await getOrUploadPublicFile(strapi, SEED_MEDIA.seoOgDefault);
+  const seoOgHomeId = await getOrUploadPublicFile(strapi, SEED_MEDIA.seoOgHomeHero);
+  const seoOgAboutId = await getOrUploadPublicFile(strapi, SEED_MEDIA.seoOgAbout);
+  const seoOgCommunityId = await getOrUploadPublicFile(strapi, SEED_MEDIA.seoOgCommunity);
+
+  const siteGlobalPayload = {
+    ...siteGlobalSeed,
+    branding: {
+      ...siteGlobalSeed.branding,
+      logoDesktop: logoFullId,
+      logoMobile: logoFullId,
+      logoLoader: logoMarkId,
+    },
+    seo_ogImage: seoOgDefaultId,
+  };
+
+  const legislativeFeaturedId = await getOrUploadPublicFile(strapi, pageLegislativeSeed.featuredImageUrl);
   const pageLegislativePayload = {
     ...pageLegislativeSeed,
     featuredImageUrl: legislativeFeaturedId,
+    seo_ogImage: legislativeFeaturedId,
   };
 
-  await upsertSingle(strapi, SITE_GLOBAL_UID, siteGlobalSeed as Record<string, unknown>);
-  await upsertSingle(strapi, PAGE_HOME_UID, pageHomeSeed as Record<string, unknown>);
-  await upsertSingle(strapi, PAGE_ABOUT_UID, pageAboutSeed as Record<string, unknown>);
-  await upsertSingle(strapi, PAGE_CONTACT_UID, pageContactSeed as Record<string, unknown>);
-  await upsertSingle(
-    strapi,
-    PAGE_LEGISLATIVE_UID,
-    pageLegislativePayload as Record<string, unknown>
-  );
-  await upsertSingle(strapi, PAGE_COMMUNITY_UID, pageCommunitySeed as Record<string, unknown>);
-  strapi.log.info('[seed] single types upserted');
+  const pageHomePayload = { ...pageHomeSeed, seo_ogImage: seoOgHomeId };
+  const pageAboutPayload = { ...pageAboutSeed, seo_ogImage: seoOgAboutId };
+  const pageContactPayload = { ...pageContactSeed, seo_ogImage: seoOgDefaultId };
+  const pageCommunityPayload = { ...pageCommunitySeed, seo_ogImage: seoOgCommunityId };
+
+  await upsertSingle(strapi, SITE_GLOBAL_UID, siteGlobalPayload as Record<string, unknown>);
+  await upsertSingle(strapi, PAGE_HOME_UID, pageHomePayload as Record<string, unknown>);
+  await upsertSingle(strapi, PAGE_ABOUT_UID, pageAboutPayload as Record<string, unknown>);
+  await upsertSingle(strapi, PAGE_CONTACT_UID, pageContactPayload as Record<string, unknown>);
+  await upsertSingle(strapi, PAGE_LEGISLATIVE_UID, pageLegislativePayload as Record<string, unknown>);
+  await upsertSingle(strapi, PAGE_COMMUNITY_UID, pageCommunityPayload as Record<string, unknown>);
+  strapi.log.info('[seed] single types upserted (including page seo_ogImage media)');
 }
 
 async function seedLegislativeProjects(strapi: Core.Strapi) {
@@ -122,6 +142,7 @@ async function seedLegislativeProjects(strapi: Core.Strapi) {
   let updated = 0;
   let order = 0;
   for (const row of legislativeWorkSeeds) {
+    const published = new Date().toISOString();
     const data = {
       stableId: row.stableId,
       slug: row.slug,
@@ -141,9 +162,20 @@ async function seedLegislativeProjects(strapi: Core.Strapi) {
       seo_metaTitle: row.title,
       seo_metaDescription: row.description,
       seo_keywords: row.keywords.map(phrase => ({ phrase })),
+      seo_canonicalUrl: `${SEED_SITE_URL}/legislative-work/${row.slug}`,
       seo_robots: 'index_follow',
       seo_ogType: 'article',
-      seo_articlePublishedAt: new Date().toISOString(),
+      seo_ogTitle: row.title,
+      seo_ogDescription: row.description,
+      seo_articlePublishedAt: published,
+      seo_articleModifiedAt: published,
+      seo_structuredData: buildArticleJsonLd(
+        SEED_SITE_URL,
+        ['legislative-work', row.slug],
+        row.title,
+        row.description,
+        published
+      ),
     };
     order += 1;
 
@@ -177,6 +209,7 @@ async function seedCommunityInitiatives(strapi: Core.Strapi) {
   let updated = 0;
   let order = 0;
   for (const row of communityInitiativeSeeds) {
+    const published = new Date().toISOString();
     const data = {
       stableId: row.stableId,
       slug: row.slug,
@@ -195,9 +228,19 @@ async function seedCommunityInitiatives(strapi: Core.Strapi) {
       seo_metaTitle: row.title,
       seo_metaDescription: row.description,
       seo_keywords: row.keywords.map(phrase => ({ phrase })),
+      seo_canonicalUrl: `${SEED_SITE_URL}/community-engagement/${row.slug}`,
       seo_robots: 'index_follow',
       seo_ogType: 'article',
-      seo_articlePublishedAt: new Date().toISOString(),
+      seo_ogTitle: row.title,
+      seo_ogDescription: row.description,
+      seo_articlePublishedAt: published,
+      seo_articleModifiedAt: published,
+      seo_structuredData: buildNonprofitProgramJsonLd(
+        SEED_SITE_URL,
+        ['community-engagement', row.slug],
+        row.title,
+        row.description
+      ),
     };
     order += 1;
 

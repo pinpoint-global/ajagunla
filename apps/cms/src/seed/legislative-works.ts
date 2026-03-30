@@ -221,4 +221,140 @@ This program is particularly impactful for women entrepreneurs who want to expan
     beneficiaries: 'Youth and women across Osun Central',
     location: 'ICT centers in major communities',
   },
+  {
+    stableId: 'primary-healthcare-upgrade-advocacy',
+    slug: 'primary-healthcare-upgrade-advocacy',
+    category: 'infrastructure' as const,
+    iconName: 'Stethoscope',
+    title: 'Primary Healthcare Upgrade Advocacy',
+    description:
+      'Coordinating with federal and state health agencies to upgrade equipment and staffing at primary health centres in Osun Central',
+    status: 'Ongoing',
+    impact: 'Improved maternal and child health outcomes in pilot wards',
+    keywords: [
+      'primary healthcare Nigeria',
+      'PHC upgrade Osun',
+      'maternal health Osun Central',
+      'constituency health advocacy',
+      'Senator Fadeyi-Ajagunla health',
+    ],
+    fullDescription: `Primary health centres are the first line of care for millions of Nigerians. This initiative focuses on equipment, essential medicines, and staffing gaps identified jointly with local health officials and community leaders.
+
+Where national programmes allow, we facilitate referrals, advocacy visits, and follow-up with responsible ministries so that rural wards are not left behind in the rollout of basic health services.`,
+    objectives: [
+      'Map PHC needs by ward across Osun Central',
+      'Advocate for equipment and solar refrigeration for vaccines',
+      'Support training for community health extension workers',
+      'Improve referral pathways to secondary facilities',
+    ],
+    timeline: [
+      { phase: 'Ward-level needs assessment', status: 'Completed', date: 'Q1 2025' },
+      { phase: 'Agency engagement & proposals', status: 'In Progress', date: 'Q2–Q4 2025' },
+      { phase: 'Pilot upgrades & evaluation', status: 'Upcoming', date: '2026' },
+    ],
+    beneficiaries: 'Women, children, and elderly patients using PHCs in Osun Central',
+    location: 'Multiple PHCs across Boripe, Olorunda, Orolu, Irepodun & other LGAs',
+  },
+  {
+    stableId: 'solar-streetlight-pilot',
+    slug: 'solar-streetlight-pilot',
+    category: 'infrastructure' as const,
+    iconName: 'Sun',
+    title: 'Solar Streetlight Pilot',
+    description:
+      'Pilot installation of solar-powered street lighting along selected market roads and school access routes',
+    status: 'In Progress',
+    impact: 'Safer night travel and extended trading hours in pilot communities',
+    keywords: [
+      'solar streetlights Nigeria',
+      'rural electrification Osun',
+      'market infrastructure',
+      'public safety lighting',
+      'renewable energy constituency',
+    ],
+    fullDescription: `Poor lighting increases risks for traders, students, and commuters. This pilot partners with qualified contractors and community development associations to install maintainable solar units on agreed corridors.
+
+Lessons from the pilot will inform a wider rollout subject to funding and technical sign-off from relevant authorities.`,
+    objectives: [
+      'Identify high-footfall corridors for pilot lighting',
+      'Deploy durable solar LED units with local maintenance plans',
+      'Monitor safety and economic feedback for six months',
+      'Document model for replication',
+    ],
+    timeline: [
+      { phase: 'Community consultation', status: 'Completed', date: 'August 2025' },
+      { phase: 'Procurement & installation', status: 'In Progress', date: 'Oct 2025 – Mar 2026' },
+      { phase: 'Monitoring & expansion review', status: 'Upcoming', date: 'Q2 2026' },
+    ],
+    beneficiaries: 'Market traders, students, and residents along pilot routes',
+    location: 'Osogbo, Ilobu, and Erin-Osun (pilot wards)',
+  },
+  {
+    stableId: 'agricultural-extension-outreach',
+    slug: 'agricultural-extension-outreach',
+    category: 'youth' as const,
+    iconName: 'Sprout',
+    title: 'Agricultural Extension Outreach',
+    description:
+      'Training sessions on improved seedlings, post-harvest handling, and access to agric credit schemes',
+    status: 'Active',
+    impact: 'Higher yields reported by participating cooperative groups',
+    keywords: [
+      'agricultural extension Osun',
+      'smallholder farmers Nigeria',
+      'post-harvest losses',
+      'youth in agriculture',
+      'cooperative farming Osun Central',
+    ],
+    fullDescription: `Agriculture remains a backbone employer in Osun Central. This outreach brings extension workers and financial literacy trainers to cooperative clusters, with emphasis on cassava, vegetables, and poultry value chains.
+
+Participants receive practical demonstrations, checklists, and signposting to legitimate federal and state support windows.`,
+    objectives: [
+      'Train 30+ cooperatives per cycle on good agronomic practices',
+      'Reduce post-harvest losses through simple storage techniques',
+      'Link eligible groups to documented credit programmes',
+      'Recruit young agripreneurs into structured mentorship',
+    ],
+    timeline: [
+      { phase: 'Cooperative mapping', status: 'Completed', date: '2024' },
+      { phase: 'Quarterly field schools', status: 'Active', date: '2025–2026' },
+      { phase: 'Impact survey & scale-up', status: 'Upcoming', date: 'Late 2026' },
+    ],
+    beneficiaries: 'Smallholder farmers and youth agripreneurs in Osun Central',
+    location: 'Ejigbo, Ife North, Irewole, and surrounding agrarian communities',
+  },
+  {
+    stableId: 'open-government-data-desk',
+    slug: 'open-government-data-desk',
+    category: 'technology' as const,
+    iconName: 'Database',
+    title: 'Open Government & Data Desk',
+    description:
+      'A constituency help desk that explains federal programmes, application timelines, and document requirements in plain language',
+    status: 'Pilot',
+    impact: 'Reduced wrong-door applications and faster resolution for constituents',
+    keywords: [
+      'constituency help desk',
+      'federal programmes Nigeria',
+      'open government',
+      'digital literacy citizens',
+      'Senate constituency services',
+    ],
+    fullDescription: `Many constituents miss out on legitimate opportunities because information is scattered across portals and gazettes. The data desk consolidates frequently requested programmes—scholarships, grants, recruitment, and interventions—into FAQs and weekly bulletins shared via town halls and messaging channels.
+
+The desk does not replace official portals; it helps citizens prepare complete applications and know where to apply.`,
+    objectives: [
+      'Publish weekly “opportunities round-up” in plain English',
+      'Maintain templates for common application documents',
+      'Train ward focal persons to assist low-literacy residents',
+      'Track outcomes and feedback for continuous improvement',
+    ],
+    timeline: [
+      { phase: 'Desk setup & staffing', status: 'Completed', date: 'June 2025' },
+      { phase: 'Pilot operations', status: 'In Progress', date: 'July 2025 – ongoing' },
+      { phase: 'Integration with website FAQs', status: 'Upcoming', date: '2026' },
+    ],
+    beneficiaries: 'Job seekers, students, MSMEs, and community leaders across Osun Central',
+    location: 'Constituency office network & virtual briefings',
+  },
 ] as const;

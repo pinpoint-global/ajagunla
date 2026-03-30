@@ -1,4 +1,19 @@
-const liveUrl = 'https://ajagunla1.com';
+import { buildSiteGlobalJsonLd, buildWebPageJsonLd } from './structured-data';
+
+/** Canonical site origin — reused by `run.ts` for collection SEO URLs. */
+export const SEED_SITE_URL = 'https://ajagunla1.com';
+
+/** Remote assets resolved in `run.ts` via `getOrUploadPublicFile` (emmanuelakabe-style media seeding). */
+export const SEED_MEDIA = {
+  logoFull: 'https://static.ajagunla1.com/images/logo-full.svg',
+  logoMark: 'https://static.ajagunla1.com/images/logo.svg',
+  legislativeFeatured: 'https://static.ajagunla1.com/images/senator-fadeyi-3.webp',
+  /** Default Open Graph image (site-global + contact). Resolved to Media Library IDs in `run.ts`. */
+  seoOgDefault: 'https://static.ajagunla1.com/images/site-preview.webp',
+  seoOgHomeHero: 'https://static.ajagunla1.com/images/senator-fadeyi-2.webp',
+  seoOgAbout: 'https://static.ajagunla1.com/images/senator-fadeyi-2.webp',
+  seoOgCommunity: 'https://static.ajagunla1.com/images/senator-fadeyi-3.webp',
+} as const;
 
 const toKeywords = (phrases: string[]) => phrases.map(phrase => ({ phrase }));
 const toTextLines = (lines: string[]) => lines.map(text => ({ text }));
@@ -54,7 +69,7 @@ export const siteGlobalSeed = {
     { label: 'Instagram', href: 'https://www.instagram.com', iconKey: 'Instagram' },
     { label: 'Facebook', href: 'https://www.facebook.com', iconKey: 'Facebook' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com', iconKey: 'Linkedin' },
-    { label: 'X', href: 'https://wwww.x.com', iconKey: 'TwitterX' },
+    { label: 'X', href: 'https://www.x.com', iconKey: 'TwitterX' },
   ],
   seo_titleDefault:
     'Senator Olubiyi Fadeyi-Ajagunla - Serving Osun Central Senatorial District',
@@ -62,7 +77,7 @@ export const siteGlobalSeed = {
   seo_description:
     'Official portfolio of Senator Olubiyi Fadeyi-Ajagunla. Committed to community development, education, and empowerment. Discover legislative achievements and community initiatives.',
   seo_ogDesc: 'Serving the People of Osun Central with Integrity and Progress',
-  seo_siteUrl: liveUrl,
+  seo_siteUrl: SEED_SITE_URL,
   seo_imageUrl: 'https://static.ajagunla1.com/images/site-preview.webp',
   seo_iconsUrl: 'https://static.ajagunla1.com/favicon.png',
   seo_keywords: toKeywords([
@@ -70,7 +85,7 @@ export const siteGlobalSeed = {
     'Senator Olubiyi Fadeyi',
     'Nigerian senator',
     'Osun state senator',
-    'APC senator',
+    'APC senator Osun',
     'Ajagunla foundation',
     'Osun Central Senatorial District',
     'Senator Olubiyi Fadeyi Osun Central',
@@ -79,12 +94,14 @@ export const siteGlobalSeed = {
     'Senator Olubiyi Fadeyi official website',
     'Ajagunla official website',
   ]),
-  seo_canonicalUrl: liveUrl,
+  seo_canonicalUrl: SEED_SITE_URL,
   seo_robots: 'index_follow' as const,
   seo_ogType: 'website' as const,
-  seo_ogTitle: undefined,
-  seo_ogDescription: undefined,
+  seo_ogTitle: 'Senator Olubiyi Fadeyi-Ajagunla | Osun Central',
+  seo_ogDescription:
+    'Official site: legislative work, community programmes, and constituent services for Osun Central Senatorial District.',
   seo_twitterCard: 'summary_large_image' as const,
+  seo_structuredData: buildSiteGlobalJsonLd(SEED_SITE_URL),
 };
 
 export const pageHomeSeed = {
@@ -98,6 +115,7 @@ export const pageHomeSeed = {
     { title: '2023', text: 'Elected to Senate' },
     { title: '2 Committees', text: 'Vice Chairman' },
     { title: '2024', text: 'Philanthropist of The Year' },
+    { title: '10th Assembly', text: 'Active lawmaking & oversight' },
   ],
   aboutSummaries: [
     {
@@ -135,6 +153,12 @@ export const pageHomeSeed = {
       description:
         'Open forums for constituents to discuss issues and participate in decision-making processes.',
     },
+    {
+      iconName: 'Shield',
+      title: 'Constituent Services',
+      description:
+        'Liaison support for federal programmes, documentation guidance, and referrals to relevant agencies.',
+    },
   ],
   aboutPreviewHighlights: toTextLines([
     'Strategic Brand Development',
@@ -162,6 +186,12 @@ export const pageHomeSeed = {
       title: 'Trade & Investment',
       description: 'Vice Chairman driving economic growth and investment opportunities',
     },
+    {
+      iconName: 'Landmark',
+      title: 'Oversight & Representation',
+      description:
+        'Advocacy on bills, motions, and interventions that reflect the priorities of Osun Central constituents',
+    },
   ],
   seo_metaTitle: undefined,
   seo_metaDescription:
@@ -171,13 +201,23 @@ export const pageHomeSeed = {
     'Osun Central',
     'Ajagunla',
     'Nigerian Senate',
+    '10th National Assembly',
+    'Senate Communications Committee',
+    'Trade and Investment Senate',
   ]),
-  seo_canonicalUrl: liveUrl,
+  seo_canonicalUrl: SEED_SITE_URL,
   seo_robots: 'index_follow' as const,
   seo_ogType: 'website' as const,
-  seo_ogTitle: undefined,
-  seo_ogDescription: undefined,
+  seo_ogTitle: 'Home | Senator Olubiyi Fadeyi-Ajagunla',
+  seo_ogDescription:
+    'Hero highlights, community programmes, and legislative priorities for Osun Central Senatorial District.',
   seo_twitterCard: 'summary_large_image' as const,
+  seo_structuredData: buildWebPageJsonLd(
+    SEED_SITE_URL,
+    '/',
+    'Home',
+    'Official portfolio of Senator Olubiyi Fadeyi-Ajagunla for Osun Central Senatorial District.'
+  ),
 };
 
 export const pageAboutSeed = {
@@ -185,6 +225,7 @@ export const pageAboutSeed = {
     "Olubiyi Fadeyi-Ajagunla is a Nigerian politician, businessman, and philanthropist currently serving as a Senator representing the Osun Central Senatorial District. Elected in 2023 under the People's Democratic Party (PDP), he has demonstrated unwavering commitment to public service and community development.",
     'In the February 25, 2023 Senate election, Fadeyi-Ajagunla won the Osun Central Senatorial District seat by polling 134,229 votes, defeating the incumbent Senator and spokesperson of the 9th Senate, Ajibola Basiru of the APC who scored 117,609 votes. This victory marked a significant shift in the political landscape of Osun Central.',
     'In the 10th National Assembly, Senator Fadeyi-Ajagunla serves as the Vice Chairman of both the Senate Communications and the Trade & Investment committees, where he has been instrumental in shaping policies that benefit not just his constituency, but Nigeria as a whole.',
+    'His legislative outlook combines private-sector discipline with grassroots empathy: prioritising education access, youth employability, rural infrastructure, and digital inclusion as cross-cutting themes for Osun Central.',
   ]),
   education: [
     {
@@ -227,6 +268,16 @@ export const pageAboutSeed = {
       name: 'Vanguard Philanthropist of the Year',
       desc: 'Awarded by Vanguard Newspaper in recognition of outstanding contributions to community development and humanitarian services across Nigeria.',
     },
+    {
+      year: '2023',
+      name: 'Distinguished Community Champion (Regional)',
+      desc: 'Recognised by civic and faith-based groups for sustained investment in education and youth programmes across Osun Central.',
+    },
+    {
+      year: '2022',
+      name: 'Excellence in Private Sector Leadership',
+      desc: 'Acknowledged for corporate governance and hospitality sector development prior to full-time public service.',
+    },
   ],
   senateCommittees: [
     {
@@ -256,11 +307,27 @@ export const pageAboutSeed = {
   seo_metaTitle: 'About Senator Olubiyi Fadeyi-Ajagunla',
   seo_metaDescription:
     'Learn about Senator Olubiyi Fadeyi-Ajagunla — Osun Central Senatorial District',
-  seo_keywords: toKeywords(['about', 'biography', 'Osun Central', 'Senator']),
-  seo_canonicalUrl: `${liveUrl}/about`,
+  seo_keywords: toKeywords([
+    'about',
+    'biography',
+    'Osun Central',
+    'Senator',
+    'Ajagunla Foundation',
+    'Senate Vice Chairman Communications',
+  ]),
+  seo_canonicalUrl: `${SEED_SITE_URL}/about`,
   seo_robots: 'index_follow' as const,
   seo_ogType: 'website' as const,
+  seo_ogTitle: 'About | Senator Olubiyi Fadeyi-Ajagunla',
+  seo_ogDescription:
+    'Biography, education, business background, foundation work, and committee roles in the 10th Senate.',
   seo_twitterCard: 'summary_large_image' as const,
+  seo_structuredData: buildWebPageJsonLd(
+    SEED_SITE_URL,
+    '/about',
+    'About Senator Olubiyi Fadeyi-Ajagunla',
+    'Biography, education, and public service background for Osun Central Senatorial District.'
+  ),
 };
 
 export const pageContactSeed = {
@@ -293,14 +360,38 @@ export const pageContactSeed = {
       title: 'Email',
       texts: [{ text: 'info@ajagunla1.com', link: 'mailto:info@ajagunla1.com' }],
     },
+    {
+      iconName: 'ClipboardList',
+      title: 'Office hours',
+      texts: [
+        { text: 'Monday – Friday: 9:00 AM – 5:00 PM' },
+        { text: 'Visit or call ahead for constituency outreach schedules.' },
+      ],
+      allowSameRow: false,
+    },
   ],
   seo_metaTitle: 'Contact',
   seo_metaDescription: "Contact Senator Olubiyi Fadeyi-Ajagunla's office",
-  seo_keywords: toKeywords(['contact', 'Senator', 'Osun Central']),
-  seo_canonicalUrl: `${liveUrl}/contact`,
+  seo_keywords: toKeywords([
+    'contact',
+    'Senator',
+    'Osun Central',
+    'National Assembly office',
+    'constituency office Oshogbo',
+  ]),
+  seo_canonicalUrl: `${SEED_SITE_URL}/contact`,
   seo_robots: 'index_follow' as const,
   seo_ogType: 'website' as const,
+  seo_ogTitle: 'Contact the office | Senator Fadeyi-Ajagunla',
+  seo_ogDescription:
+    'Senate liaison office, constituency desk, phone, email, and visiting information for constituents.',
   seo_twitterCard: 'summary_large_image' as const,
+  seo_structuredData: buildWebPageJsonLd(
+    SEED_SITE_URL,
+    '/contact',
+    'Contact',
+    "Reach the Senator's office for constituent services, invitations, and general enquiries."
+  ),
 };
 
 export const pageLegislativeSeed = {
@@ -331,7 +422,7 @@ export const pageLegislativeSeed = {
     { value: 'infrastructure', label: 'Infrastructure', iconName: 'Building2' },
     { value: 'technology', label: 'Technology & Innovation', iconName: 'Wifi' },
   ],
-  featuredImageUrl: 'https://static.ajagunla1.com/images/senator-fadeyi-3.webp',
+  featuredImageUrl: SEED_MEDIA.legislativeFeatured,
   seo_metaTitle: 'Legislative Work & Achievements',
   seo_metaDescription:
     "Explore Senator Olubiyi Fadeyi-Ajagunla's legislative achievements, bills sponsored, and community-focused initiatives.",
@@ -342,18 +433,30 @@ export const pageLegislativeSeed = {
     'education infrastructure',
     'youth empowerment',
     'technology innovation',
+    'Senate Communications Vice Chairman',
+    'constituency projects',
   ]),
-  seo_canonicalUrl: `${liveUrl}/legislative-work`,
+  seo_canonicalUrl: `${SEED_SITE_URL}/legislative-work`,
   seo_robots: 'index_follow' as const,
   seo_ogType: 'website' as const,
+  seo_ogTitle: 'Legislative work | Osun Central',
+  seo_ogDescription:
+    'Committee leadership, impact metrics, and a searchable catalogue of education, youth, infrastructure, and technology projects.',
   seo_twitterCard: 'summary_large_image' as const,
+  seo_structuredData: buildWebPageJsonLd(
+    SEED_SITE_URL,
+    '/legislative-work',
+    'Legislative work & achievements',
+    'Projects and interventions delivered or championed for Osun Central Senatorial District.'
+  ),
 };
 
 export const pageCommunitySeed = {
   foundationAchievements: [
-    { value: 1000, text: 'Scholarships Awarded' },
-    { value: 50, text: 'Communities Reached' },
-    { value: 5000, text: 'People Empowered' },
+    { value: 1200, text: 'Scholarships Awarded' },
+    { value: 55, text: 'Communities Reached' },
+    { value: 5200, text: 'People Empowered' },
+    { value: 180, text: 'Volunteer Hours (quarterly)' },
   ],
   upcomingEvents: [
     {
@@ -377,6 +480,28 @@ export const pageCommunitySeed = {
       location: 'Multiple Locations - Osun Central',
       description: 'Free health screening and medical consultations for community members',
     },
+    {
+      title: 'Back-to-School Supply Drive',
+      date: 'January 25, 2026',
+      time: '11:00 AM',
+      location: 'Rotating wards — Osun Central',
+      description:
+        'Distribution of notebooks, uniforms, and hygiene kits ahead of the new academic term',
+    },
+    {
+      title: 'Women in Business Roundtable',
+      date: 'February 8, 2026',
+      time: '3:00 PM',
+      location: 'Ilobu Town Hall',
+      description: 'Access to finance, cooperative registration, and digital bookkeeping for MSMEs',
+    },
+    {
+      title: 'Agricultural Inputs Support Day',
+      date: 'February 22, 2026',
+      time: '8:00 AM',
+      location: 'Ejigbo LGA demonstration farm',
+      description: 'Extension officers on site; improved seedlings and fertiliser guidance for smallholders',
+    },
   ],
   seo_metaTitle: 'Community Engagement & Initiatives',
   seo_metaDescription:
@@ -389,9 +514,20 @@ export const pageCommunitySeed = {
     'healthcare',
     'town halls',
     'Osun Central development',
+    'women MSMEs',
+    'agricultural extension',
   ]),
-  seo_canonicalUrl: `${liveUrl}/community-engagement`,
+  seo_canonicalUrl: `${SEED_SITE_URL}/community-engagement`,
   seo_robots: 'index_follow' as const,
   seo_ogType: 'website' as const,
+  seo_ogTitle: 'Community engagement | Ajagunla Foundation',
+  seo_ogDescription:
+    'Foundation stats, upcoming town halls, health fairs, and empowerment programmes across Osun Central.',
   seo_twitterCard: 'summary_large_image' as const,
+  seo_structuredData: buildWebPageJsonLd(
+    SEED_SITE_URL,
+    '/community-engagement',
+    'Community engagement & initiatives',
+    'Ajagunla Foundation programmes: education, health, youth, women, and rural development.'
+  ),
 };

@@ -212,4 +212,109 @@ We provide grants, capacity building, and technical support to community-based o
       'community dialogue',
     ],
   },
+  {
+    stableId: 'digital-inclusion',
+    slug: 'digital-inclusion',
+    iconName: 'Smartphone',
+    title: 'Digital Inclusion & e-Government Support',
+    description:
+      'Help desks for NIN updates, online portal navigation, and safe use of government digital services',
+    fullDescription: `Many essential services now live online—from student loans to tax portals. This initiative meets citizens where they are: short workshops, one-on-one assistance, and printed quick guides in Yoruba and English.
+
+We emphasise password safety, phishing awareness, and how to verify official URLs before submitting personal data.`,
+    impact: 'Thousands assisted with first-time portal registrations and profile updates',
+    objectives: [
+      'Run monthly digital help desks in major towns',
+      'Produce simplified flowcharts for top 10 citizen portals',
+      'Train youth volunteers as community “digital navigators”',
+      'Partner with NIMC and bank agents on documentation days',
+    ],
+    achievements: [
+      '12 digital help desk days completed in 2025',
+      '4,000+ residents assisted with portal tasks',
+      'Printed guides distributed in English and Yoruba',
+      'Volunteer navigator programme launched in 3 LGAs',
+    ],
+    beneficiaries: 'Elderly residents, first-time smartphone users, and MSMEs filing online returns',
+    location: 'Osogbo, Ilobu, Ikirun, and rotating ward centres',
+    howToParticipate:
+      'Follow announcements on town hall schedules or message the foundation office with “Digital help” to receive the next desk date in your area.',
+    keywords: [
+      'digital inclusion Osun',
+      'e-government support',
+      'NIN assistance',
+      'digital literacy seniors',
+      'portal navigation help',
+    ],
+  },
+  {
+    stableId: 'environment-climate',
+    slug: 'environment-climate',
+    iconName: 'Trees',
+    title: 'Environment & Climate Resilience',
+    description:
+      'Tree-planting drives, waste-awareness campaigns, and community clean-up competitions',
+    fullDescription: `Healthy neighbourhoods support health and commerce. We combine volunteer clean-ups with simple waste-sorting education and seasonal tree planting along schools and waterways.
+
+School clubs receive seedlings and maintenance tips so young people own the greening agenda long after each campaign day.`,
+    impact: 'Tens of thousands of seedlings planted; measurable reduction of illegal dumps in partner wards',
+    objectives: [
+      'Plant 25,000+ indigenous seedlings over three years',
+      'Run termly school environment clubs in 40 schools',
+      'Support LGAs with advocacy for lawful dump sites',
+      'Promote cookstove efficiency awareness in rural kitchens',
+    ],
+    achievements: [
+      '8,500 seedlings planted in 2024–2025 dry seasons',
+      '18 school environment clubs active',
+      '6 major community clean-up competitions held',
+      'Partnership MOUs with two LGAs on waste sensitisation',
+    ],
+    beneficiaries: 'Students, market associations, and households in urban and peri-urban wards',
+    location: 'Osun Central riverine and high-density wards',
+    howToParticipate:
+      'Schools and youth groups can apply to host a clean-up + planting day; supplies are allocated based on verified participation plans.',
+    keywords: [
+      'tree planting Osun',
+      'community clean-up',
+      'climate resilience Nigeria',
+      'school environment club',
+      'waste awareness',
+    ],
+  },
+  {
+    stableId: 'elderly-care',
+    slug: 'elderly-care',
+    iconName: 'HeartHandshake',
+    title: 'Elderly Care & Social Visits',
+    description:
+      'Quarterly outreach with basic supplies, health screening, and social companionship for older citizens',
+    fullDescription: `Isolation and unmanaged chronic conditions affect quality of life for seniors. Teams visit registered clusters with nurses for blood pressure and glucose checks, plus food staples and hygiene kits where needed.
+
+We coordinate with families and faith groups so follow-up visits and clinic referrals are not one-off events.`,
+    impact: 'Hundreds of seniors reached each quarter with screening and welfare packs',
+    objectives: [
+      'Maintain a ward-level registry of vulnerable seniors (with consent)',
+      'Offer quarterly screening and medication reminders',
+      'Facilitate NHIS / state scheme enrolment where eligible',
+      'Train volunteers in respectful engagement and safeguarding',
+    ],
+    achievements: [
+      '600+ seniors screened in 2025 outreach cycles',
+      'Partnership with 5 faith-based senior fellowships',
+      '120 welfare packs distributed quarterly',
+      'Referral pathway agreed with two general hospitals',
+    ],
+    beneficiaries: 'Citizens aged 65+ and carers in low-income households',
+    location: 'Osogbo, Ile-Ife surroundings, and rural wards with high ageing indices',
+    howToParticipate:
+      'Family members may nominate seniors through ward focal persons; capacity is limited and prioritises verified vulnerability.',
+    keywords: [
+      'elderly care Osun',
+      'senior citizen outreach',
+      'community health screening',
+      'social visits Nigeria',
+      'NHIS enrolment help',
+    ],
+  },
 ] as const;
