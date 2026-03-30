@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_link_lines",
+  "info": {
+    "displayName": "Link line",
+    "description": "Text with optional URL (tel, mailto, maps)"
+  },
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

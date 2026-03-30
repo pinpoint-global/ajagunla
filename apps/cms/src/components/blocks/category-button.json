@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_category_buttons",
+  "info": {
+    "displayName": "Category button",
+    "description": "Filter chip for legislative listing"
+  },
+  "attributes": {
+    "iconName": {
+      "type": "customField",
+      "customField": "global::lucide-icon-name",
+      "options": {}
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

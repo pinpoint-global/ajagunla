@@ -1,0 +1,76 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_homes",
+  "info": {
+    "singularName": "page-home",
+    "pluralName": "page-homes",
+    "displayName": "Home page",
+    "description": "Homepage hero and sections"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.hero"
+    },
+    "heroStats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.hero-stat"
+    },
+    "aboutSummaries": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.summary-row"
+    },
+    "communitySummaries": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.teaser"
+    },
+    "aboutPreviewHighlights": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-line"
+    },
+    "legislativeHighlights": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.teaser"
+    },
+    "seo_metaTitle": { "type": "string" },
+    "seo_metaDescription": { "type": "text" },
+    "seo_keywords": {
+      "type": "component",
+      "repeatable": true,
+      "component": "seo.keyword"
+    },
+    "seo_canonicalUrl": { "type": "string" },
+    "seo_robots": {
+      "type": "enumeration",
+      "enum": ["index_follow", "noindex_nofollow", "noindex_follow", "index_nofollow"],
+      "default": "index_follow"
+    },
+    "seo_ogType": {
+      "type": "enumeration",
+      "enum": ["website", "article"],
+      "default": "website"
+    },
+    "seo_ogTitle": { "type": "string" },
+    "seo_ogDescription": { "type": "text" },
+    "seo_ogImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "seo_twitterCard": {
+      "type": "enumeration",
+      "enum": ["summary", "summary_large_image"],
+      "default": "summary_large_image"
+    },
+    "seo_structuredData": { "type": "json" }
+  }
+}

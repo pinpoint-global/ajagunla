@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_branding_brandings",
+  "info": {
+    "displayName": "branding",
+    "description": "Global brand assets and labels"
+  },
+  "attributes": {
+    "siteName": {
+      "type": "string"
+    },
+    "logoAlt": {
+      "type": "string"
+    },
+    "logoDesktop": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "logoMobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "logoLoader": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "logoDesktopUrl": {
+      "type": "string"
+    },
+    "logoMobileUrl": {
+      "type": "string"
+    },
+    "logoLoaderUrl": {
+      "type": "string"
+    }
+  }
+}

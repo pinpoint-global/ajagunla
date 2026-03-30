@@ -1,0 +1,52 @@
+{
+  "name": "ajagunla-cms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ajagunla Strapi CMS",
+  "scripts": {
+    "prebuild": "npm run build -w @ajagunla/shared",
+    "build": "npx @strapi/strapi build",
+    "console": "npx @strapi/strapi console",
+    "deploy": "npx @strapi/strapi deploy",
+    "dev": "npx @strapi/strapi develop",
+    "develop": "npx @strapi/strapi develop",
+    "start": "npx @strapi/strapi start",
+    "strapi": "npx @strapi/strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "lint": "node -e \"process.exit(0)\"",
+    "format": "node -e \"process.exit(0)\"",
+    "format:check": "node -e \"process.exit(0)\"",
+    "checks": "npm run build"
+  },
+  "dependencies": {
+    "@ajagunla/shared": "*",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@strapi/i18n": "5.40.0",
+    "@strapi/plugin-cloud": "5.40.0",
+    "@strapi/plugin-users-permissions": "5.40.0",
+    "@strapi/provider-upload-aws-s3": "5.40.0",
+    "@strapi/strapi": "5.40.0",
+    "better-sqlite3": "12.6.2",
+    "lucide-react": "^0.544.0",
+    "pg": "^8.13.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0",
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=24.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "b2a3c4d5-e6f7-8901-bcde-f12345678901",
+    "installId": "a1b2c3d4e5f6789012345678abcdef0123456789abcdef0123456789abcdef"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "legislative_projects",
+  "info": {
+    "singularName": "legislative-project",
+    "pluralName": "legislative-projects",
+    "displayName": "Legislative project",
+    "description": "Legislative work detail pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "stableId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["education", "youth", "infrastructure", "technology"],
+      "default": "education"
+    },
+    "iconName": {
+      "type": "customField",
+      "customField": "global::lucide-icon-name",
+      "options": {}
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "status": {
+      "type": "string"
+    },
+    "impact": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "component",
+      "repeatable": true,
+      "component": "seo.keyword"
+    },
+    "fullDescription": {
+      "type": "text"
+    },
+    "objectives": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-line"
+    },
+    "timeline": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.timeline-phase"
+    },
+    "beneficiaries": {
+      "type": "text"
+    },
+    "location": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "seo_metaTitle": { "type": "string" },
+    "seo_metaDescription": { "type": "text" },
+    "seo_keywords": {
+      "type": "component",
+      "repeatable": true,
+      "component": "seo.keyword"
+    },
+    "seo_canonicalUrl": { "type": "string" },
+    "seo_robots": {
+      "type": "enumeration",
+      "enum": ["index_follow", "noindex_nofollow", "noindex_follow", "index_nofollow"],
+      "default": "index_follow"
+    },
+    "seo_ogType": {
+      "type": "enumeration",
+      "enum": ["website", "article"],
+      "default": "article"
+    },
+    "seo_ogTitle": { "type": "string" },
+    "seo_ogDescription": { "type": "text" },
+    "seo_ogImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "seo_twitterCard": {
+      "type": "enumeration",
+      "enum": ["summary", "summary_large_image"],
+      "default": "summary_large_image"
+    },
+    "seo_articlePublishedAt": { "type": "datetime" },
+    "seo_articleModifiedAt": { "type": "datetime" },
+    "seo_structuredData": { "type": "json" }
+  }
+}

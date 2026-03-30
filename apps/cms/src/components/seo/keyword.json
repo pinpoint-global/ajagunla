@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_seo_keywords",
+  "info": {
+    "displayName": "SEO keyword",
+    "description": "One meta keyword phrase"
+  },
+  "attributes": {
+    "phrase": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

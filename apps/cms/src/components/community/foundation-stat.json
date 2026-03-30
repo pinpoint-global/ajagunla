@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_community_foundation_stats",
+  "info": {
+    "displayName": "Foundation stat",
+    "description": "Numeric stat + label"
+  },
+  "attributes": {
+    "value": {
+      "type": "integer",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

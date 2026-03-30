@@ -1,0 +1,37 @@
+# Strapi (ajagunla-cms) — build context: repository root
+FROM node:20-alpine AS base
+WORKDIR /app
+RUN apk add --no-cache libc6-compat python3 make g++
+
+FROM base AS prune
+ARG APP_NAME=ajagunla-cms
+COPY . .
+RUN npx turbo prune ${APP_NAME} --docker
+
+FROM base AS install
+COPY --from=prune /app/out/json/ ./
+RUN npm ci --include=dev
+
+FROM install AS build
+ARG APP_NAME=ajagunla-cms
+COPY --from=prune /app/out/full/ ./
+RUN npx turbo run build --filter=${APP_NAME}
+
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=1337
+
+RUN apk add --no-cache libc6-compat
+
+COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/package-lock.json ./package-lock.json
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/packages/shared ./packages/shared
+COPY --from=build /app/apps/cms ./apps/cms
+
+EXPOSE 1337
+
+CMD ["npm", "run", "start", "--workspace=ajagunla-cms"]

@@ -41,13 +41,27 @@ This is a modern, full-stack web application showcasing the senator's legislativ
 - **Formatting**: Prettier
 - **Build Tool**: Turbopack
 
+## Monorepo layout
+
+- `apps/web` — Next.js public site (`ajagunla-web`)
+- `apps/cms` — Strapi 5 CMS (`ajagunla-cms`)
+- `packages/shared` — shared types and Lucide icon registry (`@ajagunla/shared`)
+
+Root scripts: `npm run dev:web`, `npm run dev:cms`, `npm run build:web`, `npm run build:cms`.
+
+Docker (Coolify): build from repo root using [`Dockerfile.web`](Dockerfile.web) and [`Dockerfile.cms`](Dockerfile.cms). See [`docs/COOLIFY.md`](docs/COOLIFY.md).
+
+**CMS integration:** legislative/community listing and detail pages now read from Strapi collections. Set `NEXT_PUBLIC_STRAPI_URL` and provide `STRAPI_API_TOKEN` if your public role does not have read permissions.
+
+**Contact submissions:** the contact form sends email via the Next API route and also persists each submission to Strapi (`contact-submission`). Set `STRAPI_WRITE_API_TOKEN` in `apps/web/.env.local` to allow server-side create calls.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- MongoDB database (local or cloud instance like MongoDB Atlas)
-- npm, yarn, pnpm, or bun
+- Node.js 20+
+- MongoDB database (local or cloud) for Next.js API routes / admin features
+- npm 10+
 
 ### Installation
 
@@ -57,13 +71,17 @@ git clone <repository-url>
 cd ajagunla
 ```
 
-2. Install dependencies:
+2. Install dependencies (from the **repository root**):
 ```bash
 npm install
 ```
 
 3. Set up environment variables:
-Create a `.env.local` file in the root directory with the following variables:
+Create `apps/web/.env.local` (see [`apps/web/.env.example`](apps/web/.env.example)) and `apps/cms/.env` from [`apps/cms/.env.example`](apps/cms/.env.example).
+
+For a first-time CMS database with seed content, set `STRAPI_SEED=true` in `apps/cms/.env` before starting Strapi once.
+
+The following variables apply to the **legacy** single-app layout; for the web app, prefer `apps/web/.env.local`:
 
 ```env
 # Application

@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_communities",
+  "info": {
+    "singularName": "page-community",
+    "pluralName": "page-communities",
+    "displayName": "Community listing page",
+    "description": "Community engagement index page sections"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "foundationAchievements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "community.foundation-stat"
+    },
+    "upcomingEvents": {
+      "type": "component",
+      "repeatable": true,
+      "component": "community.event"
+    },
+    "seo_metaTitle": { "type": "string" },
+    "seo_metaDescription": { "type": "text" },
+    "seo_keywords": {
+      "type": "component",
+      "repeatable": true,
+      "component": "seo.keyword"
+    },
+    "seo_canonicalUrl": { "type": "string" },
+    "seo_robots": {
+      "type": "enumeration",
+      "enum": ["index_follow", "noindex_nofollow", "noindex_follow", "index_nofollow"],
+      "default": "index_follow"
+    },
+    "seo_ogType": {
+      "type": "enumeration",
+      "enum": ["website", "article"],
+      "default": "website"
+    },
+    "seo_ogTitle": { "type": "string" },
+    "seo_ogDescription": { "type": "text" },
+    "seo_ogImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "seo_twitterCard": {
+      "type": "enumeration",
+      "enum": ["summary", "summary_large_image"],
+      "default": "summary_large_image"
+    },
+    "seo_structuredData": { "type": "json" }
+  }
+}

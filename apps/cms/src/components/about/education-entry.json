@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_education_entries",
+  "info": {
+    "displayName": "Education entry",
+    "description": "One education credential"
+  },
+  "attributes": {
+    "degree": {
+      "type": "string",
+      "required": true
+    },
+    "course": {
+      "type": "string",
+      "required": true
+    },
+    "institution": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

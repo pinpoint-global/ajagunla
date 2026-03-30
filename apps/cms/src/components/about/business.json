@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_about_businesses",
+  "info": {
+    "displayName": "Business block",
+    "description": "Business / narrative section with paragraphs"
+  },
+  "attributes": {
+    "iconName": {
+      "type": "customField",
+      "customField": "global::lucide-icon-name",
+      "options": {}
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "paragraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-line"
+    }
+  }
+}

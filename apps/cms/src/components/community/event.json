@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_community_events",
+  "info": {
+    "displayName": "Upcoming event",
+    "description": "Community listing event row"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

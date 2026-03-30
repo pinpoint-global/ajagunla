@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_home_hero_stats",
+  "info": {
+    "displayName": "Hero stat",
+    "description": "Label + supporting text for home hero stats"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

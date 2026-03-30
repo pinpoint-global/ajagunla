@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_site_contact_informations",
+  "info": {
+    "displayName": "Contact information",
+    "description": "Global address, phones, hours (site-wide)"
+  },
+  "attributes": {
+    "address": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-line"
+    },
+    "constituencyOffice": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-line"
+    },
+    "tel": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-line"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-line"
+    },
+    "whatsapp": {
+      "type": "string",
+      "required": true
+    },
+    "locationUrl": {
+      "type": "string",
+      "required": true
+    },
+    "mapEmbedUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "officeHours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.office-hours"
+    }
+  }
+}
