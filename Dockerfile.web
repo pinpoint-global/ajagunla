@@ -10,7 +10,7 @@ RUN npx turbo prune ${APP_NAME} --docker
 
 FROM base AS install
 COPY --from=prune /app/out/json/ ./
-RUN npm ci --include=dev
+RUN npm i
 
 FROM install AS build
 ARG APP_NAME=ajagunla-web
