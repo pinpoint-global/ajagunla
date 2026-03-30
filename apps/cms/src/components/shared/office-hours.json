@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_office_hours",
+  "info": {
+    "displayName": "Office hours",
+    "description": "Office hour row with day range and time"
+  },
+  "attributes": {
+    "days": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

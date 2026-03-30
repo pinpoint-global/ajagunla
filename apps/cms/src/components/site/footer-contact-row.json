@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_site_footer_contact_rows",
+  "info": {
+    "displayName": "Footer contact row",
+    "description": "Footer contact block with lines"
+  },
+  "attributes": {
+    "iconName": {
+      "type": "customField",
+      "customField": "global::lucide-icon-name",
+      "options": {}
+    },
+    "href": {
+      "type": "string"
+    },
+    "texts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link-line"
+    }
+  }
+}

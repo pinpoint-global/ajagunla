@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_site_nav_links",
+  "info": {
+    "displayName": "Nav link",
+    "description": "Header / footer navigation entry"
+  },
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "footerOnlySuffix": {
+      "type": "string"
+    },
+    "showInHeaderOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "showInFooterOnly": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

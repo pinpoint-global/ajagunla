@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_teasers",
+  "info": {
+    "displayName": "Teaser",
+    "description": "Icon, title, and description (community / highlights)"
+  },
+  "attributes": {
+    "iconName": {
+      "type": "customField",
+      "customField": "global::lucide-icon-name",
+      "options": {}
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

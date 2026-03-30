@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_summary_rows",
+  "info": {
+    "displayName": "About summary row",
+    "description": "Home page about section card"
+  },
+  "attributes": {
+    "iconName": {
+      "type": "customField",
+      "customField": "global::lucide-icon-name",
+      "options": {}
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

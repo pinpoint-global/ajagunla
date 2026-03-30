@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_submissions",
+  "info": {
+    "singularName": "contact-submission",
+    "pluralName": "contact-submissions",
+    "displayName": "Contact submission",
+    "description": "Contact form submissions from the website"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "formName": {
+      "type": "string",
+      "required": true
+    },
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "inquiryType": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "submissionSource": {
+      "type": "string",
+      "default": "website"
+    },
+    "submittedAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "submissionSenderName": {
+      "type": "string"
+    }
+  }
+}

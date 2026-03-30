@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_awards",
+  "info": {
+    "displayName": "Award",
+    "description": "Recognition / award entry"
+  },
+  "attributes": {
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

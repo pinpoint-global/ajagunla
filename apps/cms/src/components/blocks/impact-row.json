@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_impact_rows",
+  "info": {
+    "displayName": "Impact row",
+    "description": "Stat heading + description for impact sections"
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

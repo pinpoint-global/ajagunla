@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_text_lines",
+  "info": {
+    "displayName": "Text line",
+    "description": "Single line of text (biography, bullets, keywords, etc.)"
+  },
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

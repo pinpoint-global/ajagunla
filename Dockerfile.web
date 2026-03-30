@@ -1,0 +1,34 @@
+# Next.js (ajagunla-web) — build context: repository root
+FROM node:20-alpine AS base
+WORKDIR /app
+RUN apk add --no-cache libc6-compat
+
+FROM base AS prune
+ARG APP_NAME=ajagunla-web
+COPY . .
+RUN npx turbo prune ${APP_NAME} --docker
+
+FROM base AS install
+COPY --from=prune /app/out/json/ ./
+RUN npm ci --include=dev
+
+FROM install AS build
+ARG APP_NAME=ajagunla-web
+COPY --from=prune /app/out/full/ ./
+RUN npx turbo run build --filter=${APP_NAME}
+
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3002
+ENV HOSTNAME=0.0.0.0
+
+COPY --from=build /app/apps/web/.next/standalone ./
+COPY --from=build /app/apps/web/.next/static ./apps/web/.next/static
+COPY --from=build /app/apps/web/public ./apps/web/public
+
+EXPOSE 3002
+
+CMD ["node", "apps/web/server.js"]

@@ -1,0 +1,76 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_globals",
+  "info": {
+    "singularName": "site-global",
+    "pluralName": "site-globals",
+    "displayName": "Site global",
+    "description": "Navigation, contact, socials, default SEO"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "branding": {
+      "type": "component",
+      "repeatable": false,
+      "component": "branding.branding"
+    },
+    "navLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site.nav-link"
+    },
+    "contactInformation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "site.contact-information"
+    },
+    "contactCardsForFooter": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site.footer-contact-row"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site.social-link"
+    },
+    "seo_titleDefault": { "type": "string" },
+    "seo_titleTemplate": { "type": "string" },
+    "seo_description": { "type": "text" },
+    "seo_ogDesc": { "type": "string" },
+    "seo_siteUrl": { "type": "string" },
+    "seo_imageUrl": { "type": "string" },
+    "seo_iconsUrl": { "type": "string" },
+    "seo_keywords": {
+      "type": "component",
+      "repeatable": true,
+      "component": "seo.keyword"
+    },
+    "seo_canonicalUrl": { "type": "string" },
+    "seo_robots": {
+      "type": "enumeration",
+      "enum": ["index_follow", "noindex_nofollow", "noindex_follow", "index_nofollow"],
+      "default": "index_follow"
+    },
+    "seo_ogType": {
+      "type": "enumeration",
+      "enum": ["website", "article"],
+      "default": "website"
+    },
+    "seo_ogTitle": { "type": "string" },
+    "seo_ogDescription": { "type": "text" },
+    "seo_ogImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "seo_twitterCard": {
+      "type": "enumeration",
+      "enum": ["summary", "summary_large_image"],
+      "default": "summary_large_image"
+    },
+    "seo_structuredData": { "type": "json" }
+  }
+}

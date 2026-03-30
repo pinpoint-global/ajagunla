@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_site_social_links",
+  "info": {
+    "displayName": "Social link",
+    "description": "Social network link with icon key"
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "iconKey": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

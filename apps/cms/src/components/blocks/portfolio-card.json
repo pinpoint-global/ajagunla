@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_portfolio_cards",
+  "info": {
+    "displayName": "Portfolio card",
+    "description": "Leadership / focus area card"
+  },
+  "attributes": {
+    "iconName": {
+      "type": "customField",
+      "customField": "global::lucide-icon-name",
+      "options": {}
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "committee": {
+      "type": "string",
+      "required": true
+    },
+    "note": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
