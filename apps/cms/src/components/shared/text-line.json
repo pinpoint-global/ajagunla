@@ -2,11 +2,11 @@
   "collectionName": "components_shared_text_lines",
   "info": {
     "displayName": "Text line",
-    "description": "Single line of text (biography, bullets, keywords, etc.)"
+    "description": "Repeatable text (short lines or paragraphs — biography, bullets, objectives, etc.)"
   },
   "attributes": {
     "text": {
-      "type": "string",
+      "type": "text",
       "required": true
     }
   }
