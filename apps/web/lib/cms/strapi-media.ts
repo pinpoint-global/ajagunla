@@ -4,7 +4,18 @@
  * Node-based verification scripts.
  */
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://127.0.0.1:1337';
+/**
+ * Strapi API origin (no trailing slash handling here — callers strip as needed).
+ * Docker often sets `ENV NEXT_PUBLIC_STRAPI_URL=` from an unset ARG, which is ""
+ * and must not win over the dev fallback (`??` only treats null/undefined).
+ */
+export function getStrapiOrigin(): string {
+  const raw = process.env.NEXT_PUBLIC_STRAPI_URL;
+  const trimmed = typeof raw === 'string' ? raw.trim() : '';
+  return trimmed.length > 0 ? trimmed : 'http://127.0.0.1:1338';
+}
+
+const STRAPI_URL = getStrapiOrigin();
 
 function absolutizeMediaUrl(u: string): string {
   if (u.startsWith('http')) return u;

@@ -17,6 +17,9 @@ ARG APP_NAME=ajagunla-web
 # Next runs SSG during `next build` ("Collecting page data") and reads Strapi here.
 # Runtime env on the final container is too late: `NEXT_PUBLIC_*` is inlined at build time,
 # and without these vars the app falls back to http://127.0.0.1:1337 (see lib/cms/strapi.ts).
+# Omitting --build-arg NEXT_PUBLIC_STRAPI_URL sets the env to "" (empty string), not unset.
+# The app treats blank as missing and falls back to http://127.0.0.1:1337 — fine for local
+# builds, but production image builds must pass the real CMS URL here.
 ARG NEXT_PUBLIC_STRAPI_URL
 ARG STRAPI_API_TOKEN
 ENV NEXT_PUBLIC_STRAPI_URL=${NEXT_PUBLIC_STRAPI_URL}

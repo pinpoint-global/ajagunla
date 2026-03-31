@@ -8,8 +8,11 @@ import {
   STRAPI_POPULATE_PAGE_LEGISLATIVE,
   STRAPI_POPULATE_SITE_GLOBAL,
 } from './strapi-populate';
+import { getStrapiMediaUrl, getStrapiOrigin } from './strapi-media';
 
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://127.0.0.1:1337';
+export { getStrapiMediaUrl };
+
+const STRAPI_URL = getStrapiOrigin();
 const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN;
 const STRAPI_WRITE_TOKEN = process.env.STRAPI_WRITE_API_TOKEN ?? STRAPI_TOKEN;
 
@@ -209,26 +212,4 @@ type ContactSubmissionPayload = {
 
 export async function createContactSubmission(payload: ContactSubmissionPayload) {
   return strapiWrite<unknown>('/api/contact-submissions', { data: payload });
-}
-
-function absolutizeMediaUrl(u: string): string {
-  if (u.startsWith('http')) return u;
-  const base = STRAPI_URL.replace(/\/$/, '');
-  return `${base}${u.startsWith('/') ? u : `/${u}`}`;
-}
-
-export function getStrapiMediaUrl(media: unknown, fallback?: string): string | undefined {
-  if (media == null) return fallback;
-  if (typeof media === 'object' && media !== null) {
-    const m = media as Record<string, unknown>;
-    if (typeof m.url === 'string') return absolutizeMediaUrl(m.url);
-    const data = m.data as Record<string, unknown> | null | undefined;
-    if (data && typeof data === 'object') {
-      const inner = data as Record<string, unknown>;
-      const attrs = inner.attributes as Record<string, unknown> | undefined;
-      const url = (attrs?.url as string | undefined) ?? (inner.url as string | undefined);
-      if (typeof url === 'string') return absolutizeMediaUrl(url);
-    }
-  }
-  return fallback;
 }

@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 
-import { getStrapiMediaUrl } from '../lib/cms/strapi-media';
+import { getStrapiMediaUrl, getStrapiOrigin } from '../lib/cms/strapi-media';
 import { mapSiteBranding, mapSiteGlobalContent } from '../lib/cms/site-global-mappers';
 import type { SiteGlobalDocInput } from '../lib/types/site-global-strapi';
 
-const base = process.env.NEXT_PUBLIC_STRAPI_URL ?? 'http://127.0.0.1:1337';
+const base = getStrapiOrigin();
 
 function expect(condition: unknown, message: string): void {
   assert.ok(Boolean(condition), message);
