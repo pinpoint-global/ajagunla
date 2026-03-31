@@ -14,6 +14,13 @@ RUN npm i
 
 FROM install AS build
 ARG APP_NAME=ajagunla-web
+# Next runs SSG during `next build` ("Collecting page data") and reads Strapi here.
+# Runtime env on the final container is too late: `NEXT_PUBLIC_*` is inlined at build time,
+# and without these vars the app falls back to http://127.0.0.1:1337 (see lib/cms/strapi.ts).
+ARG NEXT_PUBLIC_STRAPI_URL
+ARG STRAPI_API_TOKEN
+ENV NEXT_PUBLIC_STRAPI_URL=${NEXT_PUBLIC_STRAPI_URL}
+ENV STRAPI_API_TOKEN=${STRAPI_API_TOKEN}
 COPY --from=prune /app/out/full/ ./
 RUN npx turbo run build --filter=${APP_NAME}
 
